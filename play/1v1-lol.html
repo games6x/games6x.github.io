@@ -936,51 +936,6 @@
             }
         });
 
-                } else if (gameFrameContainer.webkitRequestFullscreen) gameFrameContainer.webkitRequestFullscreen();
-                else if (gameFrameContainer.mozRequestFullScreen) gameFrameContainer.mozRequestFullScreen();
-                else if (gameFrameContainer.msRequestFullscreen) gameFrameContainer.msRequestFullscreen();
-                else {
-                    // Fallback for mobile browsers
-                    gameFrame.style.position = 'fixed';
-                    gameFrame.style.top = '0';
-                    gameFrame.style.left = '0';
-                    gameFrame.style.width = '100vw';
-                    gameFrame.style.height = '100vh';
-                    gameFrame.style.zIndex = '9999';
-                    gameFrame.style.backgroundColor = 'black';
-                    
-                    const closeBtn = document.createElement('button');
-                    closeBtn.innerHTML = '�';
-                    closeBtn.style.position = 'fixed';
-                    closeBtn.style.top = '10px';
-                    closeBtn.style.right = '10px';
-                    closeBtn.style.zIndex = '10000';
-                    closeBtn.style.background = 'rgba(0,0,0,0.7)';
-                    closeBtn.style.color = 'white';
-                    closeBtn.style.border = 'none';
-                    closeBtn.style.borderRadius = '50%';
-                    closeBtn.style.width = '40px';
-                    closeBtn.style.height = '40px';
-                    closeBtn.style.fontSize = '20px';
-                    closeBtn.style.cursor = 'pointer';
-                    closeBtn.id = 'fullscreenCloseBtn';
-                    
-                    closeBtn.addEventListener('click', function() {
-                        gameFrame.style.position = 'absolute';
-                        gameFrame.style.top = '0';
-                        gameFrame.style.left = '0';
-                        gameFrame.style.width = '100%';
-                        gameFrame.style.height = '100%';
-                        gameFrame.style.zIndex = '1';
-                        gameFrame.style.backgroundColor = 'transparent';
-                        document.body.removeChild(closeBtn);
-                    });
-                    
-                    document.body.appendChild(closeBtn);
-                }
-            }
-        });
-
         // Like button functionality
         document.getElementById('likeBtn').addEventListener('click', function() {
             this.classList.toggle('liked');
