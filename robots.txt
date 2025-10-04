@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://games6x.github.io/sitemap.xml
+Sitemap: https://games6x.github.io/image-sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

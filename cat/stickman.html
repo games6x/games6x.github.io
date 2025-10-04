@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../fav.png">
+    <link rel="shortcut icon" type="image/png" href="../fav.png">
+    <link rel="apple-touch-icon" href="../fav.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblocked Games - Play Free Online Games</title>
+    <meta name="description" content="Play the best unblocked games online right in your browser. Choose from our quality unblocked games and have fun playing the best game titles. Fast Easy Unblocked - unblockedgames.com">
+    <meta name="keywords" content="stickman games, stick figure games, unblocked stickman games, free stickman games, online stickman games, stickman hook">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark header-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Unblocked Games</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../favorites.html">Favorites</a></li>
+                </ul>
+                <div class="search-container position-relative">
+                    <input type="text" class="search-input" placeholder="Search games..." id="searchInput">
+                    <button class="search-btn" type="button" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                    <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+        <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-menu-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+            <h3>Categories</h3>
+        </div>
+        <div class="sidebar-content">
+            <ul class="sidebar-menu">
+                <li class="sidebar-item">
+                    <a href="new.html" class="sidebar-link">
+                        <img src="../icon/imgi_5_New.webp" alt="New" class="sidebar-icon">
+                        <span>New Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="trending.html" class="sidebar-link">
+                        <img src="../icon/imgi_6_Trending.webp" alt="Trending" class="sidebar-icon">
+                        <span>Trending Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="updated.html" class="sidebar-link">
+                        <img src="../icon/imgi_7_Updated.webp" alt="Updated" class="sidebar-icon">
+                        <span>Updated Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="action.html" class="sidebar-link">
+                        <img src="../icon/imgi_11_Action.webp" alt="Action" class="sidebar-icon">
+                        <span>Action Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="adventure.html" class="sidebar-link">
+                        <img src="../icon/imgi_12_Adventure.webp" alt="Adventure" class="sidebar-icon">
+                        <span>Adventure Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="basketball.html" class="sidebar-link">
+                        <img src="../icon/imgi_13_Basketball.webp" alt="Basketball" class="sidebar-icon">
+                        <span>Basketball Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="bike.html" class="sidebar-link">
+                        <img src="../icon/imgi_14_Bike.webp" alt="Bike" class="sidebar-icon">
+                        <span>Bike Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="card.html" class="sidebar-link">
+                        <img src="../icon/imgi_16_Card.webp" alt="Card" class="sidebar-icon">
+                        <span>Card Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="casual.html" class="sidebar-link">
+                        <img src="../icon/imgi_17_Casual.webp" alt="Casual" class="sidebar-icon">
+                        <span>Casual Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="clicker.html" class="sidebar-link">
+                        <img src="../icon/imgi_18_Clicker.webp" alt="Clicker" class="sidebar-icon">
+                        <span>Clicker Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="controller.html" class="sidebar-link">
+                        <img src="../icon/imgi_19_Controller.webp" alt="Controller" class="sidebar-icon">
+                        <span>Controller Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="driving.html" class="sidebar-link">
+                        <img src="../icon/imgi_20_Driving.webp" alt="Driving" class="sidebar-icon">
+                        <span>Driving Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="escape.html" class="sidebar-link">
+                        <img src="../icon/imgi_21_Escape.webp" alt="Escape" class="sidebar-icon">
+                        <span>Escape Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="flash.html" class="sidebar-link">
+                        <img src="../icon/imgi_22_Flash.webp" alt="Flash" class="sidebar-icon">
+                        <span>Flash Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="fps.html" class="sidebar-link">
+                        <img src="../icon/imgi_23_FPS.webp" alt="FPS" class="sidebar-icon">
+                        <span>FPS Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="horror.html" class="sidebar-link">
+                        <img src="../icon/imgi_24_Horror.webp" alt="Horror" class="sidebar-icon">
+                        <span>Horror Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="io.html" class="sidebar-link">
+                        <img src="../icon/imgi_25_io.webp" alt="IO" class="sidebar-icon">
+                        <span>IO Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="minecraft.html" class="sidebar-link">
+                        <img src="../icon/imgi_27_Minecraft.webp" alt="Minecraft" class="sidebar-icon">
+                        <span>Minecraft Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="multiplayer.html" class="sidebar-link">
+                        <img src="../icon/imgi_9_Multiplayer.webp" alt="Multiplayer" class="sidebar-icon">
+                        <span>Multiplayer Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pool.html" class="sidebar-link">
+                        <img src="../icon/imgi_28_Pool.webp" alt="Pool" class="sidebar-icon">
+                        <span>Pool Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="puzzle.html" class="sidebar-link">
+                        <img src="../icon/imgi_29_Puzzle.webp" alt="Puzzle" class="sidebar-icon">
+                        <span>Puzzle Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="racing.html" class="sidebar-link">
+                        <img src="../icon/imgi_15_Car.webp" alt="Racing" class="sidebar-icon">
+                        <span>Racing Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="shooting.html" class="sidebar-link">
+                        <img src="../icon/imgi_30_Shooting.webp" alt="Shooting" class="sidebar-icon">
+                        <span>Shooting Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="simulation.html" class="sidebar-link">
+                        <img src="../icon/imgi_31_Soccer.webp" alt="Simulation" class="sidebar-icon">
+                        <span>Simulation Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="soccer.html" class="sidebar-link">
+                        <img src="../icon/imgi_31_Soccer.webp" alt="Soccer" class="sidebar-icon">
+                        <span>Soccer Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="space.html" class="sidebar-link">
+                        <img src="../icon/imgi_32_Sports.webp" alt="Space" class="sidebar-icon">
+                        <span>Space Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="sports.html" class="sidebar-link">
+                        <img src="../icon/imgi_32_Sports.webp" alt="Sports" class="sidebar-icon">
+                        <span>Sports Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="stickman.html" class="sidebar-link active">
+                        <img src="../icon/imgi_33_Stickman.webp" alt="Stickman" class="sidebar-icon">
+                        <span>Stickman Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tower-defense.html" class="sidebar-link">
+                        <img src="../icon/imgi_35_TowerDefense.webp" alt="Tower Defense" class="sidebar-icon">
+                        <span>Tower Defense Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="2player.html" class="sidebar-link">
+                        <img src="../icon/imgi_10_2players.webp" alt="2 Player" class="sidebar-icon">
+                        <span>2 Player Games</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../categories.html">Categories</a></li>
+                <li class="breadcrumb-item active">Stickman Games</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Sparkle Animation Background -->
+    <div class="sparkle-container">
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+            </div>
+            
+    <section id="stickman-games" class="py-4">
+        <div class="container">
+            <div class="games-container">
+            <div class="games-grid">
+                <!-- Stickman Hook -->
+                <div class="game-card" data-game="stickman-hook">
+                    <div class="game-card-image">
+                        <img src="../game_icons/stickman-hook.png" alt="Stickman Hook" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Stickman Hook</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/stickman-hook.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('stickman-hook')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stickman Fighter Epic Battle 2 -->
+                <div class="game-card" data-game="stickman-fighter-epic-battle-2">
+                    <div class="game-card-image">
+                        <img src="../game_icons/stickman-fighter-epic-battle-2.png" alt="Stickman Fighter Epic Battle 2" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Stickman Fighter Epic Battle 2</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/stickman-fighter-epic-battle-2.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('stickman-fighter-epic-battle-2')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stickman Fighter Mega Brawl -->
+                <div class="game-card" data-game="stickman-fighter-mega-brawl">
+                    <div class="game-card-image">
+                        <img src="../game_icons/stickman-fighter-mega-brawl.png" alt="Stickman Fighter Mega Brawl" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Stickman Fighter Mega Brawl</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/stickman-fighter-mega-brawl.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('stickman-fighter-mega-brawl')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stickman Army Team Battle -->
+                <div class="game-card" data-game="stickman-army-team-battle">
+                    <div class="game-card-image">
+                        <img src="../game_icons/stickman-army-team-battle.png" alt="Stickman Army Team Battle" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Stickman Army Team Battle</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/stickman-army-team-battle.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('stickman-army-team-battle')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stickman Army The Resistance -->
+                <div class="game-card" data-game="stickman-army-the-resistance">
+                    <div class="game-card-image">
+                        <img src="../game_icons/stickman-army-the-resistance.png" alt="Stickman Army The Resistance" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Stickman Army The Resistance</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/stickman-army-the-resistance.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('stickman-army-the-resistance')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stickman Boxing KO Champion -->
+                <div class="game-card" data-game="stickman-boxing-ko-champion">
+                    <div class="game-card-image">
+                        <img src="../game_icons/stickman-boxing-ko-champion.png" alt="Stickman Boxing KO Champion" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Stickman Boxing KO Champion</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/stickman-boxing-ko-champion.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('stickman-boxing-ko-champion')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stickman Bridge Constructor -->
+                <div class="game-card" data-game="stickman-bridge-constructor">
+                    <div class="game-card-image">
+                        <img src="../game_icons/stickman-bridge-constructor.png" alt="Stickman Bridge Constructor" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Stickman Bridge Constructor</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/stickman-bridge-constructor.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('stickman-bridge-constructor')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stickman Climb 2 -->
+                <div class="game-card" data-game="stickman-climb-2">
+                    <div class="game-card-image">
+                        <img src="../game_icons/stickman-climb-2.png" alt="Stickman Climb 2" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Stickman Climb 2</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/stickman-climb-2.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('stickman-climb-2')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stickman Golf -->
+                <div class="game-card" data-game="stickman-golf">
+                    <div class="game-card-image">
+                        <img src="../game_icons/stickman-golf.png" alt="Stickman Golf" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Stickman Golf</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/stickman-golf.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('stickman-golf')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stickman Ragdoll Crash Fun -->
+                <div class="game-card" data-game="stickman-ragdoll-crash-fun">
+                    <div class="game-card-image">
+                        <img src="../game_icons/stickman-ragdoll-crash-fun.png" alt="Stickman Ragdoll Crash Fun" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Stickman Ragdoll Crash Fun</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/stickman-ragdoll-crash-fun.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('stickman-ragdoll-crash-fun')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stickman School Run -->
+                <div class="game-card" data-game="stickman-school-run">
+                    <div class="game-card-image">
+                        <img src="../game_icons/stickman-school-run.png" alt="Stickman School Run" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Stickman School Run</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/stickman-school-run.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('stickman-school-run')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Spear Stickman -->
+                <div class="game-card" data-game="the-spear-stickman">
+                    <div class="game-card-image">
+                        <img src="../game_icons/the-spear-stickman.png" alt="The Spear Stickman" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">The Spear Stickman</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/the-spear-stickman.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('the-spear-stickman')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="py-4">
+        <div class="container">
+            <div class="games-container">
+                    <div class="categories-description">
+                        <h2>Best Stickman Games Unblocked - Play Free Online Stick Figure Games</h2>
+                        <p>Discover the ultimate collection of <strong>stickman games unblocked</strong> that you can play anywhere, anytime! Our carefully curated selection features the most exciting and thrilling stick figure games that work perfectly at school, work, or any location with internet access.</p>
+                        
+                        <h3>Popular Stickman Game Types</h3>
+                        <p>Our collection features the most popular stickman games including <a href="../play/stickman-hook.html" class="text-custom-primary">Stickman Hook</a>, <a href="../play/stickman-fighter-epic-battle-2.html" class="text-custom-primary">Stickman Fighter Epic Battle 2</a>, and <a href="../play/stickman-army-team-battle.html" class="text-custom-primary">Stickman Army Team Battle</a>. Each game offers unique gameplay and stick figure action.</p>
+                        
+                        <h3>Stickman Game Categories</h3>
+                        <ul>
+                            <li><strong>Fighting Games:</strong> <a href="../play/stickman-fighter-epic-battle-2.html" class="text-custom-primary">Stickman Fighter Epic Battle 2</a>, <a href="../play/stickman-boxing-ko-champion.html" class="text-custom-primary">Stickman Boxing KO Champion</a> - Combat and martial arts</li>
+                            <li><strong>Army Games:</strong> <a href="../play/stickman-army-team-battle.html" class="text-custom-primary">Stickman Army Team Battle</a>, <a href="../play/stickman-army-the-resistance.html" class="text-custom-primary">Stickman Army The Resistance</a> - Military strategy</li>
+                            <li><strong>Adventure Games:</strong> <a href="../play/stickman-hook.html" class="text-custom-primary">Stickman Hook</a>, <a href="../play/stickman-climb-2.html" class="text-custom-primary">Stickman Climb 2</a> - Platform and adventure</li>
+                            <li><strong>Sports Games:</strong> <a href="../play/stickman-golf.html" class="text-custom-primary">Stickman Golf</a> - Sports with stick figures</li>
+                            <li><strong>Puzzle Games:</strong> <a href="../play/stickman-bridge-constructor.html" class="text-custom-primary">Stickman Bridge Constructor</a> - Brain-teasing challenges</li>
+                        </ul>
+
+                        <h3>Why Choose Our Stickman Games?</h3>
+                        <ul>
+                            <li><strong>Instant Play:</strong> No downloads or installations needed - play directly in your browser</li>
+                            <li><strong>Device Compatible:</strong> Optimized for PC, mobile phones, and tablets</li>
+                            <li><strong>Regular Updates:</strong> New stickman games added frequently</li>
+                            <li><strong>Simple Graphics:</strong> Classic stick figure style that loads quickly</li>
+                            <li><strong>High Quality:</strong> Carefully selected games with great gameplay</li>
+                        </ul>
+
+                        <h3>How to Get Started</h3>
+                        <p>Playing our <strong>unblocked stickman games</strong> is easy:</p>
+                        <ol>
+                            <li>Browse through our collection above</li>
+                            <li>Click "Play Now" on any game that interests you</li>
+                            <li>Wait for the game to load (usually takes just seconds)</li>
+                            <li>Start playing immediately - no registration required!</li>
+                        </ol>
+
+                        <h3>Related Categories</h3>
+                        <p>If you enjoy stickman games, check out these related categories:</p>
+                        <ul>
+                            <li><a href="../cat/action.html" class="text-custom-primary">Action Games</a> - High-intensity gameplay</li>
+                            <li><a href="../cat/adventure.html" class="text-custom-primary">Adventure Games</a> - Exploration and quests</li>
+                            <li><a href="../cat/fighting.html" class="text-custom-primary">Fighting Games</a> - Combat and martial arts</li>
+                            <li><a href="../cat/puzzle.html" class="text-custom-primary">Puzzle Games</a> - Brain-teasing challenges</li>
+                            <li><a href="../cat/2player.html" class="text-custom-primary">2 Player Games</a> - Multiplayer stickman action</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Modern Footer with Shapes -->
+    <footer class="footer-modern">
+        <!-- Animated Wave Shape -->
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" class="wave-path"></path>
+            </svg>
+        </div>
+        
+        <!-- Floating Geometric Shapes -->
+        <div class="footer-shapes">
+            <div class="footer-shape footer-shape-1"></div>
+            <div class="footer-shape footer-shape-2"></div>
+            <div class="footer-shape footer-shape-3"></div>
+            <div class="footer-shape footer-shape-4"></div>
+        </div>
+        
+        <div class="footer-content-wrapper">
+            <div class="container">
+                <!-- Main Footer Content -->
+                <div class="footer-grid">
+                    <div class="footer-col footer-brand">
+                        <div class="footer-logo">
+                            <span class="footer-logo-icon">🎮</span>
+                            <h3>Unblocked Games</h3>
+                        </div>
+                        <p class="footer-tagline">Your ultimate destination for free online games. Play anywhere, anytime!</p>
+                        <div class="footer-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">5000+</span>
+                                <span class="stat-label">Games</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Free</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5 class="footer-title">Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="../index.html">🏠 Home</a></li>
+                            <li><a href="../categories.html">📂 Categories</a></li>
+                            <li><a href="../favorites.html">❤️ Favorites</a></li>
+                            <li><a href="../index.html#top-games">🏆 Top Games</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5 class="footer-title">Popular Categories</h5>
+                        <ul class="footer-links">
+                            <li><a href="../cat/action.html">⚔️ Action Games</a></li>
+                            <li><a href="../cat/racing.html">🏎️ Racing Games</a></li>
+                            <li><a href="../cat/sports.html">⚽ Sports Games</a></li>
+                            <li><a href="../cat/puzzle.html">🧩 Puzzle Games</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5 class="footer-title">Support</h5>
+                        <ul class="footer-links">
+                            <li><a href="../contact.html">📧 Contact Us</a></li>
+                            <li><a href="../privacy-policy.html">🔒 Privacy Policy</a></li>
+                            <li><a href="../terms-of-service.html">📜 Terms of Service</a></li>
+                            <li><a href="../help.html">💡 Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Footer Bottom -->
+                <div class="footer-bottom-modern">
+                    <div class="footer-copyright">
+                        <p>&copy; 2024 Unblocked Games. All rights reserved.</p>
+                    </div>
+                    <div class="footer-tagline-bottom">
+                        <p>Play free online games at school and work 🎮</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="fav.png">
+    <link rel="shortcut icon" type="image/png" href="fav.png">
+    <link rel="apple-touch-icon" href="fav.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorites - Unblocked Games Collection</title>
+    <meta name="description" content="Access your favorite unblocked games quickly. Save and organize your preferred games for easy access at school, work, or anywhere.">
+    <meta name="keywords" content="favorite unblocked games, saved games, my games, unblocked games collection, personal game list">
+    <meta name="author" content="Unblocked Games">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="My Favorites - Unblocked Games Collection">
+    <meta property="og:description" content="Access your favorite unblocked games quickly. Save and organize your preferred games for easy access.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unblockedgames.com/favorites.html">
+    <meta property="og:image" content="https://unblockedgames.com/images/favorites-og.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Favorites - Unblocked Games Collection">
+    <meta name="twitter:description" content="Access your favorite unblocked games quickly. Save and organize your preferred games for easy access.">
+    <meta name="twitter:image" content="https://unblockedgames.com/images/favorites-twitter.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "My Favorites - Unblocked Games",
+        "description": "Access your favorite unblocked games quickly. Save and organize your preferred games for easy access at school, work, or anywhere.",
+        "url": "https://unblockedgames.com/favorites.html"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-custom">
+        <nav class="navbar navbar-expand-lg navbar-dark header-custom fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"></a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categories.html">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="favorites.html">Favorites</a>
+                        </li>
+                </ul>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Search Bar -->
+                    <div class="search-container position-relative">
+                        <input type="text" class="search-input" placeholder="Search games..." id="searchInput">
+                        <button class="search-btn" type="button" id="searchBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                        <!-- Search Results Dropdown -->
+                        <div class="search-results" id="searchResults">
+                            <!-- Results will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Theme Toggle Button -->
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                        <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Favorites</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-menu-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+            <h3>Categories</h3>
+        </div>
+        <div class="sidebar-content">
+            <ul class="sidebar-menu">
+                <li class="sidebar-item">
+                    <a href="cat/new.html" class="sidebar-link">
+                        <img src="icon/imgi_5_New.webp" alt="New" class="sidebar-icon">
+                        <span>New Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/trending.html" class="sidebar-link">
+                        <img src="icon/imgi_6_Trending.webp" alt="Trending" class="sidebar-icon">
+                        <span>Trending Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/updated.html" class="sidebar-link">
+                        <img src="icon/imgi_7_Updated.webp" alt="Updated" class="sidebar-icon">
+                        <span>Updated Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/action.html" class="sidebar-link">
+                        <img src="icon/imgi_11_Action.webp" alt="Action" class="sidebar-icon">
+                        <span>Action Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/adventure.html" class="sidebar-link">
+                        <img src="icon/imgi_12_Adventure.webp" alt="Adventure" class="sidebar-icon">
+                        <span>Adventure Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/basketball.html" class="sidebar-link">
+                        <img src="icon/imgi_13_Basketball.webp" alt="Basketball" class="sidebar-icon">
+                        <span>Basketball Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/bike.html" class="sidebar-link">
+                        <img src="icon/imgi_14_Bike.webp" alt="Bike" class="sidebar-icon">
+                        <span>Bike Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/card.html" class="sidebar-link">
+                        <img src="icon/imgi_16_Card.webp" alt="Card" class="sidebar-icon">
+                        <span>Card Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/casual.html" class="sidebar-link">
+                        <img src="icon/imgi_17_Casual.webp" alt="Casual" class="sidebar-icon">
+                        <span>Casual Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/clicker.html" class="sidebar-link">
+                        <img src="icon/imgi_18_Clicker.webp" alt="Clicker" class="sidebar-icon">
+                        <span>Clicker Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/controller.html" class="sidebar-link">
+                        <img src="icon/imgi_19_Controller.webp" alt="Controller" class="sidebar-icon">
+                        <span>Controller Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/driving.html" class="sidebar-link">
+                        <img src="icon/imgi_20_Driving.webp" alt="Driving" class="sidebar-icon">
+                        <span>Driving Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/escape.html" class="sidebar-link">
+                        <img src="icon/imgi_21_Escape.webp" alt="Escape" class="sidebar-icon">
+                        <span>Escape Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/flash.html" class="sidebar-link">
+                        <img src="icon/imgi_22_Flash.webp" alt="Flash" class="sidebar-icon">
+                        <span>Flash Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/fps.html" class="sidebar-link">
+                        <img src="icon/imgi_23_FPS.webp" alt="FPS" class="sidebar-icon">
+                        <span>FPS Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/horror.html" class="sidebar-link">
+                        <img src="icon/imgi_24_Horror.webp" alt="Horror" class="sidebar-icon">
+                        <span>Horror Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/io.html" class="sidebar-link">
+                        <img src="icon/imgi_25_io.webp" alt="IO" class="sidebar-icon">
+                        <span>IO Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/minecraft.html" class="sidebar-link">
+                        <img src="icon/imgi_27_Minecraft.webp" alt="Minecraft" class="sidebar-icon">
+                        <span>Minecraft Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/multiplayer.html" class="sidebar-link">
+                        <img src="icon/imgi_9_Multiplayer.webp" alt="Multiplayer" class="sidebar-icon">
+                        <span>Multiplayer Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/pool.html" class="sidebar-link">
+                        <img src="icon/imgi_28_Pool.webp" alt="Pool" class="sidebar-icon">
+                        <span>Pool Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/puzzle.html" class="sidebar-link">
+                        <img src="icon/imgi_29_Puzzle.webp" alt="Puzzle" class="sidebar-icon">
+                        <span>Puzzle Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/racing.html" class="sidebar-link">
+                        <img src="icon/imgi_15_Car.webp" alt="Racing" class="sidebar-icon">
+                        <span>Racing Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/shooting.html" class="sidebar-link">
+                        <img src="icon/imgi_30_Shooting.webp" alt="Shooting" class="sidebar-icon">
+                        <span>Shooting Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/simulation.html" class="sidebar-link">
+                        <img src="icon/imgi_17_Casual.webp" alt="Simulation" class="sidebar-icon">
+                        <span>Simulation Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/soccer.html" class="sidebar-link">
+                        <img src="icon/imgi_31_Soccer.webp" alt="Soccer" class="sidebar-icon">
+                        <span>Soccer Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/space.html" class="sidebar-link">
+                        <img src="icon/imgi_23_FPS.webp" alt="Space" class="sidebar-icon">
+                        <span>Space Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/sports.html" class="sidebar-link">
+                        <img src="icon/imgi_32_Sports.webp" alt="Sports" class="sidebar-icon">
+                        <span>Sports Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/stickman.html" class="sidebar-link">
+                        <img src="icon/imgi_33_Stickman.webp" alt="Stickman" class="sidebar-icon">
+                        <span>Stickman Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/tower-defense.html" class="sidebar-link">
+                        <img src="icon/imgi_35_TowerDefense.webp" alt="Tower Defense" class="sidebar-icon">
+                        <span>Tower Defense Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="cat/2player.html" class="sidebar-link">
+                        <img src="icon/imgi_10_2players.webp" alt="2 Player" class="sidebar-icon">
+                        <span>2 Player Games</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content">
+        <!-- Favorites Content -->
+        <section id="favorites-games" class="py-5">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Favorite Games</h2>
+                <p class="section-subtitle">Quick access to your most loved unblocked games!</p>
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-favorites" class="text-center py-5" style="display: none;">
+                <div class="mb-4">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="text-muted">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <h3 class="h4 text-muted mb-3">No Favorite Games Yet</h3>
+                <p class="text-muted mb-4">Start adding games to your favorites by clicking the heart icon on any game card.</p>
+                <a href="index.html" class="btn-custom btn-primary">Browse Games</a>
+            </div>
+
+            <!-- Favorites Grid -->
+            <div id="favorites-grid" class="games-grid">
+                <!-- Favorites will be populated by JavaScript -->
+            </div>
+
+            <!-- Clear All Button -->
+            <div id="clear-favorites" class="text-center mt-4" style="display: none;">
+                <button class="btn-custom btn-outline" onclick="clearAllFavorites()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3,6 5,6 21,6"></polyline>
+                        <path d="M19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2"></path>
+                    </svg>
+                    Clear All Favorites
+                </button>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Modern Footer with Shapes -->
+    <footer class="footer-modern">
+        <!-- Animated Wave Shape -->
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" class="wave-path"></path>
+            </svg>
+        </div>
+        
+        <!-- Floating Geometric Shapes -->
+        <div class="footer-shapes">
+            <div class="footer-shape footer-shape-1"></div>
+            <div class="footer-shape footer-shape-2"></div>
+            <div class="footer-shape footer-shape-3"></div>
+            <div class="footer-shape footer-shape-4"></div>
+        </div>
+        
+        <div class="footer-content-wrapper">
+            <div class="container">
+                <!-- Main Footer Content -->
+                <div class="footer-grid">
+                    <div class="footer-col footer-brand">
+                        <div class="footer-logo">
+                            <span class="footer-logo-icon">🎮</span>
+                            <h3>Unblocked Games</h3>
+                        </div>
+                        <p class="footer-tagline">Your ultimate destination for free online games. Play anywhere, anytime!</p>
+                        <div class="footer-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">5000+</span>
+                                <span class="stat-label">Games</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Free</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5 class="footer-title">Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="index.html">🏠 Home</a></li>
+                            <li><a href="categories.html">📂 Categories</a></li>
+                            <li><a href="favorites.html">❤️ Favorites</a></li>
+                            <li><a href="index.html#top-games">🏆 Top Games</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5 class="footer-title">Popular Categories</h5>
+                        <ul class="footer-links">
+                            <li><a href="cat/action.html">⚔️ Action Games</a></li>
+                            <li><a href="cat/racing.html">🏎️ Racing Games</a></li>
+                            <li><a href="cat/sports.html">⚽ Sports Games</a></li>
+                            <li><a href="cat/puzzle.html">🧩 Puzzle Games</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5 class="footer-title">Support</h5>
+                        <ul class="footer-links">
+                            <li><a href="contact.html">📧 Contact Us</a></li>
+                            <li><a href="privacy-policy.html">🔒 Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">📜 Terms of Service</a></li>
+                            <li><a href="help.html">💡 Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Footer Bottom -->
+                <div class="footer-bottom-modern">
+                    <div class="footer-copyright">
+                        <p>&copy; 2024 Unblocked Games. All rights reserved.</p>
+                    </div>
+                    <div class="footer-tagline-bottom">
+                        <p>Play free online games at school and work 🎮</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+    
+    <script>
+        // Favorites page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Favorites page loaded, calling loadFavoritesPage()');
+            loadFavoritesPage();
+        });
+
+        // Global game data - shared across functions
+        const gameData = {
+            '10-minutes-till-dawn': { title: '10 Minutes Till Dawn', icon: 'game_icons/10-minutes-till-dawn.png', url: 'play/10-minutes-till-dawn.html' },
+            '11-11': { title: '11-11', icon: 'game_icons/11-11.png', url: 'play/11-11.html' },
+            '12-minibattles': { title: '12 Minibattles', icon: 'game_icons/12-minibattles.png', url: 'play/12-minibattles.html' },
+            '1v1-lol': { title: '1v1 Lol', icon: 'game_icons/1v1-lol.png', url: 'play/1v1-lol.html' },
+            '2048-multitask': { title: '2048 Multitask', icon: 'game_icons/2048-multitask.png', url: 'play/2048-multitask.html' },
+            '2048': { title: '2048', icon: 'game_icons/2048.png', url: 'play/2048.html' },
+            '3d-car-simulator': { title: '3d Car Simulator', icon: 'game_icons/3d-car-simulator.png', url: 'play/3d-car-simulator.html' },
+            '3d-moto-simulator-2': { title: '3d Moto Simulator 2', icon: 'game_icons/3d-moto-simulator-2.png', url: 'play/3d-moto-simulator-2.html' },
+            '4th-and-goal-2022': { title: '4th And Goal 2022', icon: 'game_icons/4th-and-goal-2022.png', url: 'play/4th-and-goal-2022.html' },
+            '4x4-drive-offroad': { title: '4x4 Drive Offroad', icon: 'game_icons/4x4-drive-offroad.png', url: 'play/4x4-drive-offroad.html' },
+            '8-ball-pool': { title: '8 Ball Pool', icon: 'game_icons/8-ball-pool.png', url: 'play/8-ball-pool.html' },
+            'a-dance-of-fire-and-ice': { title: 'A Dance Of Fire And Ice', icon: 'game_icons/a-dance-of-fire-and-ice.png', url: 'play/a-dance-of-fire-and-ice.html' },
+            'a-small-world-cup': { title: 'A Small World Cup', icon: 'game_icons/a-small-world-cup.png', url: 'play/a-small-world-cup.html' },
+            'adventure-drivers': { title: 'Adventure Drivers', icon: 'game_icons/adventure-drivers.png', url: 'play/adventure-drivers.html' },
+            'age-of-war': { title: 'Age Of War', icon: 'game_icons/age-of-war.png', url: 'play/age-of-war.html' },
+            'air-hockey-championship-deluxe': { title: 'Air Hockey Championship Deluxe', icon: 'game_icons/air-hockey-championship-deluxe.png', url: 'play/air-hockey-championship-deluxe.html' },
+            'among-us': { title: 'Among Us', icon: 'game_icons/among-us.png', url: 'play/among-us.html' },
+            'ape-sling': { title: 'Ape Sling', icon: 'game_icons/ape-sling.png', url: 'play/ape-sling.html' },
+            'aqua-thrills': { title: 'Aqua Thrills', icon: 'game_icons/aqua-thrills.png', url: 'play/aqua-thrills.html' },
+            'archery-world-tour': { title: 'Archery World Tour', icon: 'game_icons/archery-world-tour.png', url: 'play/archery-world-tour.html' },
+            'arithmetica': { title: 'Arithmetica', icon: 'game_icons/arithmetica.png', url: 'play/arithmetica.html' },
+            'athletics-hero': { title: 'Athletics Hero', icon: 'game_icons/athletics-hero.png', url: 'play/athletics-hero.html' },
+            'awesome-tanks-2': { title: 'Awesome Tanks 2', icon: 'game_icons/awesome-tanks-2.png', url: 'play/awesome-tanks-2.html' },
+            'awesome-tanks': { title: 'Awesome Tanks', icon: 'game_icons/awesome-tanks.png', url: 'play/awesome-tanks.html' },
+            'b-cubed': { title: 'B-Cubed', icon: 'game_icons/b-cubed.png', url: 'play/b-cubed.html' },
+            'basket-and-ball': { title: 'Basket And Ball', icon: 'game_icons/basket-and-ball.png', url: 'play/basket-and-ball.html' },
+            'basket-bros': { title: 'Basket Bros', icon: 'game_icons/basket-bros.png', url: 'play/basket-bros.html' },
+            'basket-champs': { title: 'Basket Champs', icon: 'game_icons/basket-champs.png', url: 'play/basket-champs.html' },
+            'basket-random': { title: 'Basket Random', icon: 'game_icons/basket-random.png', url: 'play/basket-random.html' },
+            'basket-swooshes': { title: 'Basket Swooshes', icon: 'game_icons/basket-swooshes.png', url: 'play/basket-swooshes.html' },
+            'basketball-legends': { title: 'Basketball Legends', icon: 'game_icons/basketball-legends.png', url: 'play/basketball-legends.html' },
+            'basketball-line': { title: 'Basketball Line', icon: 'game_icons/basketball-line.png', url: 'play/basketball-line.html' },
+            'basketball-stars': { title: 'Basketball Stars', icon: 'game_icons/basketball-stars.png', url: 'play/basketball-stars.html' },
+            'battle-wheels': { title: 'Battle Wheels', icon: 'game_icons/battle-wheels.png', url: 'play/battle-wheels.html' },
+            'bearsus': { title: 'Bearsus', icon: 'game_icons/bearsus.png', url: 'play/bearsus.html' },
+            'big-shot-boxing': { title: 'Big Shot Boxing', icon: 'game_icons/big-shot-boxing.png', url: 'play/big-shot-boxing.html' },
+            'big-tall-small': { title: 'Big Tall Small', icon: 'game_icons/big-tall-small.png', url: 'play/big-tall-small.html' },
+            'bike-trials-offroad-1': { title: 'Bike Trials Offroad 1', icon: 'game_icons/bike-trials-offroad-1.png', url: 'play/bike-trials-offroad-1.html' },
+            'bike-trials-winter-1': { title: 'Bike Trials Winter 1', icon: 'game_icons/bike-trials-winter-1.png', url: 'play/bike-trials-winter-1.html' },
+            'bike-trials-winter-2': { title: 'Bike Trials Winter 2', icon: 'game_icons/bike-trials-winter-2.png', url: 'play/bike-trials-winter-2.html' },
+            'bitlife': { title: 'Bitlife', icon: 'game_icons/bitlife.png', url: 'play/bitlife.html' },
+            'block-the-pig': { title: 'Block The Pig', icon: 'game_icons/block-the-pig.png', url: 'play/block-the-pig.html' },
+            'blocky-cars': { title: 'Blocky Cars', icon: 'game_icons/blocky-cars.png', url: 'play/blocky-cars.html' },
+            'blocky-trials': { title: 'Blocky Trials', icon: 'game_icons/blocky-trials.png', url: 'play/blocky-trials.html' },
+            'bloons-tower-defense-1': { title: 'Bloons Tower Defense 1', icon: 'game_icons/bloons-tower-defense-1.png', url: 'play/bloons-tower-defense-1.html' },
+            'bloxorz': { title: 'Bloxorz', icon: 'game_icons/bloxorz.png', url: 'play/bloxorz.html' },
+            'blumgi-ball': { title: 'Blumgi Ball', icon: 'game_icons/blumgi-ball.png', url: 'play/blumgi-ball.html' },
+            'blumgi-castle': { title: 'Blumgi Castle', icon: 'game_icons/blumgi-castle.png', url: 'play/blumgi-castle.html' },
+            'blumgi-rocket': { title: 'Blumgi Rocket', icon: 'game_icons/blumgi-rocket.png', url: 'play/blumgi-rocket.html' },
+            'blumgi-slime': { title: 'Blumgi Slime', icon: 'game_icons/blumgi-slime.png', url: 'play/blumgi-slime.html' },
+            'bob-the-robber-4': { title: 'Bob The Robber 4', icon: 'game_icons/bob-the-robber-4.png', url: 'play/bob-the-robber-4.html' },
+            'bomb-it-7': { title: 'Bomb It 7', icon: 'game_icons/bomb-it-7.png', url: 'play/bomb-it-7.html' },
+            'bowling-stars': { title: 'Bowling Stars', icon: 'game_icons/bowling-stars.png', url: 'play/bowling-stars.html' },
+            'boxing-physics-2': { title: 'Boxing Physics 2', icon: 'game_icons/boxing-physics-2.png', url: 'play/boxing-physics-2.html' },
+            'boxing-random': { title: 'Boxing Random', icon: 'game_icons/boxing-random.png', url: 'play/boxing-random.html' },
+            'brain-for-monster-truck': { title: 'Brain For Monster Truck', icon: 'game_icons/brain-for-monster-truck.png', url: 'play/brain-for-monster-truck.html' },
+            'brain-test-2-tricky-stories': { title: 'Brain Test 2: Tricky Stories', icon: 'game_icons/brain-test-2-tricky-stories.png', url: 'play/brain-test-2-tricky-stories.html' },
+            'brain-test-3-tricky-quests': { title: 'Brain Test 3: Tricky Quests', icon: 'game_icons/brain-test-3-tricky-quests.png', url: 'play/brain-test-3-tricky-quests.html' },
+            'brain-test-tricky-puzzles': { title: 'Brain Test: Tricky Puzzles', icon: 'game_icons/brain-test-tricky-puzzles.png', url: 'play/brain-test-tricky-puzzles.html' },
+            'breaking-the-bank': { title: 'Breaking The Bank', icon: 'game_icons/breaking-the-bank.png', url: 'play/breaking-the-bank.html' },
+            'bubble-shooter': { title: 'Bubble Shooter', icon: 'game_icons/bubble-shooter.png', url: 'play/bubble-shooter.html' },
+            'bubble-trouble-3': { title: 'Bubble Trouble 3', icon: 'game_icons/bubble-trouble-3.png', url: 'play/bubble-trouble-3.html' },
+            'bubble-trouble': { title: 'Bubble Trouble', icon: 'game_icons/bubble-trouble.png', url: 'play/bubble-trouble.html' },
+            'bullet-force': { title: 'Bullet Force', icon: 'game_icons/bullet-force.png', url: 'play/bullet-force.html' },
+            'bumper-cars-soccer': { title: 'Bumper Cars Soccer', icon: 'game_icons/bumper-cars-soccer.png', url: 'play/bumper-cars-soccer.html' },
+            'bunny-hop': { title: 'Bunny Hop', icon: 'game_icons/bunny-hop.png', url: 'play/bunny-hop.html' },
+            'burger-bounty': { title: 'Burger Bounty', icon: 'game_icons/burger-bounty.png', url: 'play/burger-bounty.html' },
+            'burnin-rubber-5-xs': { title: 'Burnin\' Rubber 5 Xs', icon: 'game_icons/burnin-rubber-5-xs.png', url: 'play/burnin-rubber-5-xs.html' },
+            'burnin-rubber-crash-n-burn': { title: 'Burnin\' Rubber Crash n\' Burn', icon: 'game_icons/burnin-rubber-crash-n-burn.png', url: 'play/burnin-rubber-crash-n-burn.html' },
+            'burnout-drift-seaport-max': { title: 'Burnout Drift Seaport Max', icon: 'game_icons/burnout-drift-seaport-max.png', url: 'play/burnout-drift-seaport-max.html' },
+            'burrito-bison': { title: 'Burrito Bison', icon: 'game_icons/burrito-bison.png', url: 'play/burrito-bison.html' },
+            'candy-jump': { title: 'Candy Jump', icon: 'game_icons/candy-jump.png', url: 'play/candy-jump.html' },
+            'cannon-strike': { title: 'Cannon Strike', icon: 'game_icons/cannon-strike.png', url: 'play/cannon-strike.html' },
+            'car-climb-racing': { title: 'Car Climb Racing', icon: 'game_icons/car-climb-racing.png', url: 'play/car-climb-racing.html' },
+            'car-rush': { title: 'Car Rush', icon: 'game_icons/car-rush.png', url: 'play/car-rush.html' },
+            'cars-thief-tank-edition': { title: 'Cars Thief Tank Edition', icon: 'game_icons/cars-thief-tank-edition.png', url: 'play/cars-thief-tank-edition.html' },
+            'cars-thief': { title: 'Cars Thief', icon: 'game_icons/cars-thief.png', url: 'play/cars-thief.html' },
+            'cat-gunner-super-zombie-shoot': { title: 'Cat Gunner: Super Zombie Shoot', icon: 'game_icons/cat-gunner-super-zombie-shoot.png', url: 'play/cat-gunner-super-zombie-shoot.html' },
+            'cat-trap': { title: 'Cat Trap', icon: 'game_icons/cat-trap.png', url: 'play/cat-trap.html' },
+            'cats': { title: 'Cats', icon: 'game_icons/cats.png', url: 'play/cats.html' },
+            'chicken-merge': { title: 'Chicken Merge', icon: 'game_icons/chicken-merge.png', url: 'play/chicken-merge.html' },
+            'chrome-dino': { title: 'Chrome Dino', icon: 'game_icons/chrome-dino.png', url: 'play/chrome-dino.html' },
+            'city-bike-stunt-2': { title: 'City Bike Stunt 2', icon: 'game_icons/city-bike-stunt-2.png', url: 'play/city-bike-stunt-2.html' },
+            'city-car-driving-stunt-master': { title: 'City Car Driving: Stunt Master', icon: 'game_icons/city-car-driving-stunt-master.png', url: 'play/city-car-driving-stunt-master.html' },
+            'city-rider': { title: 'City Rider', icon: 'game_icons/city-rider.png', url: 'play/city-rider.html' },
+            'cluster-rush': { title: 'Cluster Rush', icon: 'game_icons/cluster-rush.png', url: 'play/cluster-rush.html' },
+            'coffee-shop': { title: 'Coffee Shop', icon: 'game_icons/coffee-shop.png', url: 'play/coffee-shop.html' },
+            'color-switch': { title: 'Color Switch', icon: 'game_icons/color-switch.png', url: 'play/color-switch.html' },
+            'color-tunnel-2': { title: 'Color Tunnel 2', icon: 'game_icons/color-tunnel-2.png', url: 'play/color-tunnel-2.html' },
+            'cookie-clicker': { title: 'Cookie Clicker', icon: 'game_icons/cookie-clicker.png', url: 'play/cookie-clicker.html' },
+            'crazy-cars': { title: 'Crazy Cars', icon: 'game_icons/crazy-cars.png', url: 'play/crazy-cars.html' },
+            'crazy-tunnel-3d': { title: 'Crazy Tunnel 3d', icon: 'game_icons/crazy-tunnel-3d.png', url: 'play/crazy-tunnel-3d.html' },
+            'cricket-world-cup': { title: 'Cricket World Cup', icon: 'game_icons/cricket-world-cup.png', url: 'play/cricket-world-cup.html' },
+            'crossy-road': { title: 'Crossy Road', icon: 'game_icons/crossy-road.png', url: 'play/crossy-road.html' },
+            'cubes-king': { title: 'Cubes King', icon: 'game_icons/cubes-king.png', url: 'play/cubes-king.html' },
+            'cubito-mayhem': { title: 'Cubito Mayhem', icon: 'game_icons/cubito-mayhem.png', url: 'play/cubito-mayhem.html' },
+            'curve-ball-3d': { title: 'Curve Ball 3D', icon: 'game_icons/curve-ball-3d.png', url: 'play/curve-ball-3d.html' },
+            'cyber-cars-punk-racing': { title: 'Cyber Cars Punk Racing', icon: 'game_icons/cyber-cars-punk-racing.png', url: 'play/cyber-cars-punk-racing.html' },
+            'death-chase': { title: 'Death Chase', icon: 'game_icons/death-chase.png', url: 'play/death-chase.html' },
+            'death-run-3d': { title: 'Death Run 3d', icon: 'game_icons/death-run-3d.png', url: 'play/death-run-3d.html' },
+            'deepest-sword': { title: 'Deepest Sword', icon: 'game_icons/deepest-sword.png', url: 'play/deepest-sword.html' },
+            'deer-simulator': { title: 'Deer Simulator', icon: 'game_icons/deer-simulator.png', url: 'play/deer-simulator.html' },
+            'demolition-derby-crash-racing': { title: 'Demolition Derby Crash Racing', icon: 'game_icons/demolition-derby-crash-racing.png', url: 'play/demolition-derby-crash-racing.html' },
+            'detective-loupe-puzzle': { title: 'Detective Loupe Puzzle', icon: 'game_icons/detective-loupe-puzzle.png', url: 'play/detective-loupe-puzzle.html' },
+            'dinosaur-game': { title: 'Dinosaur Game', icon: 'game_icons/dinosaur-game.png', url: 'play/dinosaur-game.html' },
+            'dog-simulator-3d': { title: 'Dog Simulator 3D', icon: 'game_icons/dog-simulator-3d.png', url: 'play/dog-simulator-3d.html' },
+            'doge-miner': { title: 'Doge Miner', icon: 'game_icons/doge-miner.png', url: 'play/doge-miner.html' },
+            'doodle-champion-island': { title: 'Doodle Champion Island', icon: 'game_icons/doodle-champion-island.png', url: 'play/doodle-champion-island.html' },
+            'doodle-jump': { title: 'Doodle Jump', icon: 'game_icons/doodle-jump.png', url: 'play/doodle-jump.html' },
+            'draw-the-hill': { title: 'Draw The Hill', icon: 'game_icons/draw-the-hill.png', url: 'play/draw-the-hill.html' },
+            'dreadhead-parkour': { title: 'Dreadhead Parkour', icon: 'game_icons/dreadhead-parkour.png', url: 'play/dreadhead-parkour.html' },
+            'drift-boss': { title: 'Drift Boss', icon: 'game_icons/drift-boss.png', url: 'play/drift-boss.html' },
+            'drift-hunters': { title: 'Drift Hunters', icon: 'game_icons/drift-hunters.png', url: 'play/drift-hunters.html' },
+            'drive-mad': { title: 'Drive Mad', icon: 'game_icons/drive-mad.png', url: 'play/drive-mad.html' },
+            'drunken-duel': { title: 'Drunken Duel', icon: 'game_icons/drunken-duel.png', url: 'play/drunken-duel.html' },
+            'duck-life-2-world-champion': { title: 'Duck Life 2', icon: 'game_icons/duck-life-2-world-champion.png', url: 'play/duck-life-2-world-champion.html' },
+            'duck-life-3-evolution': { title: 'Duck Life 3 Evolution', icon: 'game_icons/duck-life-3-evolution.png', url: 'play/duck-life-3-evolution.html' },
+            'duck-life-4': { title: 'Duck Life 4', icon: 'game_icons/duck-life-4.png', url: 'play/duck-life-4.html' },
+            'duck-life': { title: 'Duck Life', icon: 'game_icons/duck-life.png', url: 'play/duck-life.html' },
+            'dunkbrush': { title: 'Dunkbrush', icon: 'game_icons/dunkbrush.png', url: 'play/dunkbrush.html' },
+            'dunkers': { title: 'Dunkers', icon: 'game_icons/dunkers.png', url: 'play/dunkers.html' },
+            'earn-to-die': { title: 'Earn To Die', icon: 'game_icons/earn-to-die.png', url: 'play/earn-to-die.html' },
+            'eggy-car': { title: 'Eggy Car', icon: 'game_icons/eggy-car.png', url: 'play/eggy-car.html' },
+            'elastic-man': { title: 'Elastic Man', icon: 'game_icons/elastic-man.png', url: 'play/elastic-man.html' },
+            'electron-dash': { title: 'Electron Dash', icon: 'game_icons/electron-dash.png', url: 'play/electron-dash.html' },
+            'eliza-mall-mania': { title: 'Eliza Mall Mania', icon: 'game_icons/eliza-mall-mania.png', url: 'play/eliza-mall-mania.html' },
+            'energy': { title: 'Energy', icon: 'game_icons/energy.png', url: 'play/energy.html' },
+            'escaping-the-prison': { title: 'Escaping The Prison', icon: 'game_icons/escaping-the-prison.png', url: 'play/escaping-the-prison.html' },
+            'eugenes-life': { title: 'Eugenes Life', icon: 'game_icons/eugenes-life.png', url: 'play/eugenes-life.html' },
+            'evo-city-driving': { title: 'Evo City Driving', icon: 'game_icons/evo-city-driving.png', url: 'play/evo-city-driving.html' },
+            'extreme-car-driving-simulator': { title: 'Extreme Car Driving Simulator', icon: 'game_icons/extreme-car-driving-simulator.png', url: 'play/extreme-car-driving-simulator.html' },
+            'extreme-car-parking': { title: 'Extreme Car Parking', icon: 'game_icons/extreme-car-parking.png', url: 'play/extreme-car-parking.html' },
+            'factory-balls-forever': { title: 'Factory Balls Forever', icon: 'game_icons/factory-balls-forever.png', url: 'play/factory-balls-forever.html' },
+            'fairy-dressup': { title: 'Fairy Dressup', icon: 'game_icons/fairy-dressup.png', url: 'play/fairy-dressup.html' },
+            'fancy-pants-2': { title: 'Fancy Pants 2', icon: 'game_icons/fancy-pants-2.png', url: 'play/fancy-pants-2.html' },
+            'fancy-pants-3': { title: 'Fancy Pants 3', icon: 'game_icons/fancy-pants-3.png', url: 'play/fancy-pants-3.html' },
+            'fancy-pants': { title: 'Fancy Pants', icon: 'game_icons/fancy-pants.png', url: 'play/fancy-pants.html' },
+            'five-nights-at-freddys-2': { title: 'Five Nights at Freddys\'2', icon: 'game_icons/five-nights-at-freddys-2.png', url: 'play/five-nights-at-freddys-2.html' },
+            'five-nights-at-freddys-3': { title: 'Five Nights at Freddy\' 3', icon: 'game_icons/five-nights-at-freddys-3.png', url: 'play/five-nights-at-freddys-3.html' },
+            'five-nights-at-freddys': { title: 'Five Nights at Freddy\'s', icon: 'game_icons/five-nights-at-freddys.png', url: 'play/five-nights-at-freddys.html' },
+            'flappy-bird-origin': { title: 'Flappy Bird Origin', icon: 'game_icons/flappy-bird.png', url: 'play/flappy-bird-origin.html' },
+            'flappy-bird': { title: 'Flappy Bird', icon: 'game_icons/flappy-bird.png', url: 'play/flappy-bird.html' },
+            'fleeing-the-complex': { title: 'Fleeing The Complex', icon: 'game_icons/fleeing-the-complex.png', url: 'play/fleeing-the-complex.html' },
+            'flying-car-simulator': { title: 'Flying Car Simulator', icon: 'game_icons/flying-car-simulator.png', url: 'play/flying-car-simulator.html' },
+            'foot-chinko': { title: 'Foot Chinko', icon: 'game_icons/foot-chinko.png', url: 'play/foot-chinko.html' },
+            'football-legends': { title: 'Football Legends', icon: 'game_icons/football-legends.png', url: 'play/football-legends.html' },
+            'football-masters': { title: 'Football Masters', icon: 'game_icons/football-masters.png', url: 'play/football-masters.html' },
+            'fortz': { title: 'Fortz', icon: 'game_icons/fortz.png', url: 'play/fortz.html' },
+            'free-kick-shooter': { title: 'Free Kick Shooter', icon: 'game_icons/free-kick-shooter.png', url: 'play/free-kick-shooter.html' },
+            'free-the-key': { title: 'Free The Key', icon: 'game_icons/free-the-key.png', url: 'play/free-the-key.html' },
+            'funny-shooter-2': { title: 'Funny Shooter 2', icon: 'game_icons/funny-shooter-2.png', url: 'play/funny-shooter-2.html' },
+            'furious-racing-3d': { title: 'Furious Racing 3D', icon: 'game_icons/furious-racing-3d.png', url: 'play/furious-racing-3d.html' },
+            'g-switch-3': { title: 'G Switch 3', icon: 'game_icons/g-switch-3.png', url: 'play/g-switch-3.html' },
+            'geometry-dash': { title: 'Geometry Dash', icon: 'game_icons/geometry-dash.png', url: 'play/geometry-dash.html' },
+            'getaway-shootout': { title: 'Getaway Shootout', icon: 'game_icons/getaway-shootout.png', url: 'play/getaway-shootout.html' },
+            'go-kart-go-ultra': { title: 'Go Kart Go Ultra', icon: 'game_icons/go-kart-go-ultra.png', url: 'play/go-kart-go-ultra.html' },
+            'gobble': { title: 'Gobble', icon: 'game_icons/gobble.png', url: 'play/gobble.html' },
+            'gold-digger-frvr': { title: 'Gold Digger Frvr', icon: 'game_icons/gold-digger-frvr.png', url: 'play/gold-digger-frvr.html' },
+            'golf-champions': { title: 'Golf Champions', icon: 'game_icons/golf-champions.png', url: 'play/golf-champions.html' },
+            'golfinity': { title: 'Golfinity', icon: 'game_icons/golfinity.png', url: 'play/golfinity.html' },
+            'google-feud': { title: 'Google Feud', icon: 'game_icons/google-feud.png', url: 'play/google-feud.html' },
+            'google-snake': { title: 'Google Snake', icon: 'game_icons/google-snake.png', url: 'play/google-snake.html' },
+            'grand-prix-hero': { title: 'Grand Prix Hero', icon: 'game_icons/grand-prix-hero.png', url: 'play/grand-prix-hero.html' },
+            'gravity-soccer': { title: 'Gravity Soccer', icon: 'game_icons/gravity-soccer.png', url: 'play/gravity-soccer.html' },
+            'grindcraft-remastered': { title: 'Grindcraft Remastered', icon: 'game_icons/grindcraft-remastered.png', url: 'play/grindcraft-remastered.html' },
+            'grindcraft': { title: 'Grindcraft', icon: 'game_icons/grindcraft.png', url: 'play/grindcraft.html' },
+            'gun-mayhem-2': { title: 'Gun Mayhem 2', icon: 'game_icons/gun-mayhem-2.png', url: 'play/gun-mayhem-2.html' },
+            'gun-mayhem-3': { title: 'Gun Mayhem 3', icon: 'game_icons/gun-mayhem-3.png', url: 'play/gun-mayhem-3.html' },
+            'gun-mayhem': { title: 'Gun Mayhem', icon: 'game_icons/gun-mayhem.png', url: 'play/gun-mayhem.html' },
+            'gunspin': { title: 'Gunspin', icon: 'game_icons/gunspin.png', url: 'play/gunspin.html' },
+            'hammer-2-reloaded': { title: 'Hammer 2 Reloaded', icon: 'game_icons/hammer-2-reloaded.png', url: 'play/hammer-2-reloaded.html' },
+            'happy-room': { title: 'Happy Room', icon: 'game_icons/happy-room.png', url: 'play/happy-room.html' },
+            'head-soccer-2023': { title: 'Head Soccer 2023', icon: 'game_icons/head-soccer-2023.png', url: 'play/head-soccer-2023.html' },
+            'heads-arena-soccer-all-stars': { title: 'Heads Arena Soccer All Stars', icon: 'game_icons/heads-arena-soccer-all-stars.png', url: 'play/heads-arena-soccer-all-stars.html' },
+            'heart-star-html5': { title: 'Heart Star', icon: 'game_icons/heart-star-html5.png', url: 'play/heart-star-html5.html' },
+            'hextris': { title: 'Hextris', icon: 'game_icons/hextris.png', url: 'play/hextris.html' },
+            'highway-racer-3d': { title: 'Highway Racer 3d', icon: 'game_icons/highway-racer-3d.png', url: 'play/highway-racer-3d.html' },
+            'highway-rider-extreme': { title: 'Highway Rider Extreme', icon: 'game_icons/highway-rider-extreme.png', url: 'play/highway-rider-extreme.html' },
+            'highway-traffic': { title: 'Highway Traffic', icon: 'game_icons/highway-traffic.png', url: 'play/highway-traffic.html' },
+            'horse-shoeing': { title: 'Horse Shoeing', icon: 'game_icons/horse-shoeing.png', url: 'play/horse-shoeing.html' },
+            'horse-simulator-3d': { title: 'Horse Simulator 3D', icon: 'game_icons/horse-simulator-3d.png', url: 'play/horse-simulator-3d.html' },
+            'house-of-hazards': { title: 'House Of Hazards', icon: 'game_icons/house-of-hazards.png', url: 'play/house-of-hazards.html' },
+            'hover-racer-drive': { title: 'Hover Racer Drive', icon: 'game_icons/hover-racer-drive.png', url: 'play/hover-racer-drive.html' },
+            'hover-racer': { title: 'Hover Racer', icon: 'game_icons/hover-racer.png', url: 'play/hover-racer.html' },
+            'icy-purple-head-3': { title: 'Icy Purple Head 3', icon: 'game_icons/icy-purple-head-3.png', url: 'play/icy-purple-head-3.html' },
+            'idle-ants': { title: 'Idle Ants', icon: 'game_icons/idle-ants.png', url: 'play/idle-ants.html' },
+            'idle-breakout': { title: 'Idle Breakout', icon: 'game_icons/idle-breakout.png', url: 'play/idle-breakout.html' },
+            'idle-digging-tycoon': { title: 'Idle Digging Tycoon', icon: 'game_icons/idle-digging-tycoon.png', url: 'play/idle-digging-tycoon.html' },
+            'idle-lumber-inc': { title: 'Idle Lumber Inc', icon: 'game_icons/idle-lumber-inc.png', url: 'play/idle-lumber-inc.html' },
+            'idle-miner': { title: 'Idle Miner', icon: 'game_icons/idle-miner.png', url: 'play/idle-miner.html' },
+            'idle-mining-empire': { title: 'Idle Mining Empire', icon: 'game_icons/idle-mining-empire.png', url: 'play/idle-mining-empire.html' },
+            'idle-startup-tycoon': { title: 'Idle Startup Tycoon', icon: 'game_icons/idle-startup-tycoon.png', url: 'play/idle-startup-tycoon.html' },
+            'impossible-monster-truck-race': { title: 'Impossible Monster Truck Race', icon: 'game_icons/impossible-monster-truck-race.png', url: 'play/impossible-monster-truck-race.html' },
+            'impossible-tic-tac-toe': { title: 'Impossible Tic Tac Toe', icon: 'game_icons/impossible-tic-tac-toe.png', url: 'play/impossible-tic-tac-toe.html' },
+            'infinity-loop': { title: 'Infinity Loop', icon: 'game_icons/infinity-loop.png', url: 'play/infinity-loop.html' },
+            'iron-snout': { title: 'Iron Snout', icon: 'game_icons/iron-snout.png', url: 'play/iron-snout.html' },
+            'jelly-truck': { title: 'Jelly Truck', icon: 'game_icons/jelly-truck.png', url: 'play/jelly-truck.html' },
+            'jet-boy': { title: 'Jet Boy', icon: 'game_icons/jet-boy.png', url: 'play/jet-boy.html' },
+            'jetpack-joyride': { title: 'Jetpack Joyride', icon: 'game_icons/jetpack-joyride.png', url: 'play/jetpack-joyride.html' },
+            'jollyworld': { title: 'Jollyworld', icon: 'game_icons/jollyworld.png', url: 'play/jollyworld.html' },
+            'jumping-shell': { title: 'Jumping Shell', icon: 'game_icons/jumping-shell.png', url: 'play/jumping-shell.html' },
+            'kart-race-3d': { title: 'Kart Race 3D', icon: 'game_icons/kart-race-3d.png', url: 'play/kart-race-3d.html' },
+            'kawaii-dressup': { title: 'Kawaii Dressup', icon: 'game_icons/kawaii-dressup.png', url: 'play/kawaii-dressup.html' },
+            'kix-dream-soccer': { title: 'Kix Dream Soccer', icon: 'game_icons/kix-dream-soccer.png', url: 'play/kix-dream-soccer.html' },
+            'leader-strike': { title: 'Leader Strike', icon: 'game_icons/leader-strike.png', url: 'play/leader-strike.html' },
+            'lemonade-stand': { title: 'Lemonade Stand', icon: 'game_icons/lemonade-stand.png', url: 'play/lemonade-stand.html' },
+            'life-the-game': { title: 'Life The Game', icon: 'game_icons/life-the-game.png', url: 'play/life-the-game.html' },
+            'linebacker-alley-2': { title: 'Linebacker Alley 2', icon: 'game_icons/linebacker-alley-2.png', url: 'play/linebacker-alley-2.html' },
+            'ludo-multiplayer': { title: 'Ludo Multiplayer', icon: 'game_icons/ludo-multiplayer.png', url: 'play/ludo-multiplayer.html' },
+            'mad-day': { title: 'Mad Day', icon: 'game_icons/mad-day.png', url: 'play/mad-day.html' },
+            'mad-truck-challenge-special': { title: 'Mad Truck Challenge Special', icon: 'game_icons/mad-truck-challenge-special.png', url: 'play/mad-truck-challenge-special.html' },
+            'madalin-stunt-cars-2': { title: 'Madalin Stunt Cars 2', icon: 'game_icons/madalin-stunt-cars-2.png', url: 'play/madalin-stunt-cars-2.html' },
+            'madalin-stunt-cars-3': { title: 'Madalin Stunt Cars 3', icon: 'game_icons/madalin-stunt-cars-3.png', url: 'play/madalin-stunt-cars-3.html' },
+            'marble-dash': { title: 'Marble Dash', icon: 'game_icons/marble-dash.png', url: 'play/marble-dash.html' },
+            'masked-forces': { title: 'Masked Forces', icon: 'game_icons/masked-forces.png', url: 'play/masked-forces.html' },
+            'master-chess': { title: 'Master Chess', icon: 'game_icons/master-chess.png', url: 'play/master-chess.html' },
+            'maze-path-of-light': { title: 'Maze Path Of Light', icon: 'game_icons/maze-path-of-light.png', url: 'play/maze-path-of-light.html' },
+            'maze-planet-3d': { title: 'Maze Planet 3D', icon: 'game_icons/maze-planet-3d.png', url: 'play/maze-planet-3d.html' },
+            'merge-cakes': { title: 'Merge Cakes', icon: 'game_icons/merge-cakes.png', url: 'play/merge-cakes.html' },
+            'merge-cyber-racers': { title: 'Merge Cyber Racers', icon: 'game_icons/merge-cyber-racers.png', url: 'play/merge-cyber-racers.html' },
+            'merge-harvest': { title: 'Merge Harvest', icon: 'game_icons/merge-harvest.png', url: 'play/merge-harvest.html' },
+            'merge-round-racers': { title: 'Merge Round Racers', icon: 'game_icons/merge-round-racers.png', url: 'play/merge-round-racers.html' },
+            'minecraft-1.5.2': { title: 'Minecraft 1.5.2', icon: 'game_icons/minecraft-1.5.2.png', url: 'play/minecraft-1.5.2.html' },
+            'minecraft-1.8.8': { title: 'Minecraft 1.8.8', icon: 'game_icons/minecraft-1.8.8.png', url: 'play/minecraft-1.8.8.html' },
+            'minecraft-builder': { title: 'Minecraft Builder', icon: 'game_icons/minecraft-builder.png', url: 'play/minecraft-builder.html' },
+            'minesweeper': { title: 'Minesweeper', icon: 'game_icons/minesweeper.png', url: 'play/minesweeper.html' },
+            'minibattles': { title: 'Minibattles', icon: 'game_icons/minibattles.png', url: 'play/minibattles.html' },
+            'mob-city': { title: 'Mob City', icon: 'game_icons/mob-city.png', url: 'play/mob-city.html' },
+            'monkey-mart': { title: 'Monkey Mart', icon: 'game_icons/monkey-mart.png', url: 'play/monkey-mart.html' },
+            'monster-tracks': { title: 'Monster Tracks', icon: 'game_icons/monster-tracks.png', url: 'play/monster-tracks.html' },
+            'monsters-wheels-special': { title: 'Monsters Wheels Special', icon: 'game_icons/monsters-wheels-special.png', url: 'play/monsters-wheels-special.html' },
+            'mosaic-puzzle-art': { title: 'Mosaic Puzzle Art', icon: 'game_icons/mosaic-puzzle-art.png', url: 'play/mosaic-puzzle-art.html' },
+            'moto-maniac-2': { title: 'Moto Maniac 2', icon: 'game_icons/moto-maniac-2.png', url: 'play/moto-maniac-2.html' },
+            'moto-maniac': { title: 'Moto Maniac', icon: 'game_icons/moto-maniac.png', url: 'play/moto-maniac.html' },
+            'moto-road-rash-3d': { title: 'Moto Road Rash 3D', icon: 'game_icons/moto-road-rash-3d.png', url: 'play/moto-road-rash-3d.html' },
+            'moto-trial-racing-2': { title: 'Moto Trial Racing 2', icon: 'game_icons/moto-trial-racing-2.png', url: 'play/moto-trial-racing-2.html' },
+            'moto-x3m-2': { title: 'Moto X3m 2', icon: 'game_icons/moto-x3m-2.png', url: 'play/moto-x3m-2.html' },
+            'moto-x3m-pool-party': { title: 'Moto X3m Pool Party', icon: 'game_icons/moto-x3m-pool-party.png', url: 'play/moto-x3m-pool-party.html' },
+            'moto-x3m-spooky-land': { title: 'Moto X3m Spooky Land', icon: 'game_icons/moto-x3m-spooky-land.png', url: 'play/moto-x3m-spooky-land.html' },
+            'moto-x3m-winter': { title: 'Moto X3m Winter', icon: 'game_icons/moto-x3m-winter.png', url: 'play/moto-x3m-winter.html' },
+            'moto-x3m': { title: 'Moto X3m', icon: 'game_icons/moto-x3m.png', url: 'play/moto-x3m.html' },
+            'murder': { title: 'Murder', icon: 'game_icons/murder.png', url: 'play/murder.html' },
+            'my-pony-my-little-race': { title: 'My Pony My Little Race', icon: 'game_icons/my-pony-my-little-race.png', url: 'play/my-pony-my-little-race.html' },
+            'n-gon': { title: 'N Gon', icon: 'game_icons/n-gon.png', url: 'play/n-gon.html' },
+            'neon-war': { title: 'Neon War', icon: 'game_icons/neon-war.png', url: 'play/neon-war.html' },
+            'noob-drive': { title: 'Noob Drive', icon: 'game_icons/noob-drive.png', url: 'play/noob-drive.html' },
+            'offroader-v5': { title: 'Offroader V5', icon: 'game_icons/offroader-v5.png', url: 'play/offroader-v5.html' },
+            'onion-boy': { title: 'Onion Boy', icon: 'game_icons/onion-boy.png', url: 'play/onion-boy.html' },
+            'orbital-survival': { title: 'Orbital Survival', icon: 'game_icons/orbital-survival.png', url: 'play/orbital-survival.html' },
+            'ovo': { title: 'Ovo', icon: 'game_icons/ovo.png', url: 'play/ovo.html' },
+            'panda-bubble-shooter': { title: 'Panda Bubble Shooter', icon: 'game_icons/panda-bubble-shooter.png', url: 'play/panda-bubble-shooter.html' },
+            'panda-simulator-3d': { title: 'Panda Simulator 3D', icon: 'game_icons/panda-simulator-3d.png', url: 'play/panda-simulator-3d.html' },
+            'paper-fighter-3d': { title: 'Paper Fighter 3D', icon: 'game_icons/paper-fighter-3d.png', url: 'play/paper-fighter-3d.html' },
+            'paper-io-2': { title: 'Paper Io 2', icon: 'game_icons/paper-io-2.png', url: 'play/paper-io-2.html' },
+            'parking-fury-2': { title: 'Parking Fury 2', icon: 'game_icons/parking-fury-2.png', url: 'play/parking-fury-2.html' },
+            'parking-fury-3d-bounty-hunter': { title: 'Parking Fury 3D Bounty Hunter', icon: 'game_icons/parking-fury-3d-bounty-hunter.png', url: 'play/parking-fury-3d-bounty-hunter.html' },
+            'parking-fury-3d-night-thief': { title: 'Parking Fury 3D: Night Thief', icon: 'game_icons/parking-fury-3d-night-thief.png', url: 'play/parking-fury-3d-night-thief.html' },
+            'parking-fury': { title: 'Parking Fury', icon: 'game_icons/parking-fury.png', url: 'play/parking-fury.html' },
+            'parkour-block-3d': { title: 'Parkour Block 3d', icon: 'game_icons/parkour-block-3d.png', url: 'play/parkour-block-3d.html' },
+            'penalty-kick-online': { title: 'Penalty Kick Online', icon: 'game_icons/penalty-kick-online.png', url: 'play/penalty-kick-online.html' },
+            'penalty-shooters-2': { title: 'Penalty Shooters 2', icon: 'game_icons/penalty-shooters-2.png', url: 'play/penalty-shooters-2.html' },
+            'perfect-peel': { title: 'Perfect Peel', icon: 'game_icons/perfect-peel.png', url: 'play/perfect-peel.html' },
+            'ping-pong-html5': { title: 'Ping Pong', icon: 'game_icons/ping-pong-html5.png', url: 'play/ping-pong-html5.html' },
+            'pixel-gun-survival': { title: 'Pixel Gun Survival', icon: 'game_icons/pixel-gun-survival.png', url: 'play/pixel-gun-survival.html' },
+            'pixwars-2': { title: 'Pixwars 2', icon: 'game_icons/pixwars-2.png', url: 'play/pixwars-2.html' },
+            'plactions': { title: 'Plactions', icon: 'game_icons/plactions.png', url: 'play/plactions.html' },
+            'pool-club': { title: 'Pool Club', icon: 'game_icons/pool-club.png', url: 'play/pool-club.html' },
+            'poor-bunny': { title: 'Poor Bunny', icon: 'game_icons/poor-bunny.png', url: 'play/poor-bunny.html' },
+            'pop-it-master': { title: 'Pop It Master', icon: 'game_icons/pop-it-master.png', url: 'play/pop-it-master.html' },
+            'power-badminton': { title: 'Power Badminton', icon: 'game_icons/power-badminton.png', url: 'play/power-badminton.html' },
+            'pre-civilization-bronze-age': { title: 'Pre Civilization Bronze Age', icon: 'game_icons/pre-civilization-bronze-age.png', url: 'play/pre-civilization-bronze-age.html' },
+            'precision-client': { title: 'Precision Client', icon: 'game_icons/precision-client.png', url: 'play/precision-client.html' },
+            'puppet-master': { title: 'Puppet Master', icon: 'game_icons/puppet-master.png', url: 'play/puppet-master.html' },
+            'rabbit-samurai': { title: 'Rabbit Samurai', icon: 'game_icons/rabbit-samurai.png', url: 'play/rabbit-samurai.html' },
+            'raft-wars-2': { title: 'Raft Wars 2', icon: 'game_icons/raft-wars-2.png', url: 'play/raft-wars-2.html' },
+            'raft-wars-multiplayer': { title: 'Raft Wars Multiplayer', icon: 'game_icons/raft-wars-multiplayer.png', url: 'play/raft-wars-multiplayer.html' },
+            'raft-wars': { title: 'Raft Wars', icon: 'game_icons/raft-wars.png', url: 'play/raft-wars.html' },
+            'rally-champion': { title: 'Rally Champion', icon: 'game_icons/rally-champion.png', url: 'play/rally-champion.html' },
+            'real-cars-in-city': { title: 'Real Cars In City', icon: 'game_icons/real-cars-in-city.png', url: 'play/real-cars-in-city.html' },
+            'real-city-driving-2': { title: 'Real City Driving 2', icon: 'game_icons/real-city-driving-2.png', url: 'play/real-city-driving-2.html' },
+            'real-simulator-monster-truck': { title: 'Real Simulator Monster Truck', icon: 'game_icons/real-simulator-monster-truck.png', url: 'play/real-simulator-monster-truck.html' },
+            'recoil': { title: 'Recoil', icon: 'game_icons/recoil.png', url: 'play/recoil.html' },
+            'red-ball-4': { title: 'Red Ball 4', icon: 'game_icons/red-ball-4.png', url: 'play/red-ball-4.html' },
+            'retro-bowl': { title: 'Retro Bowl', icon: 'game_icons/retro-bowl.png', url: 'play/retro-bowl.html' },
+            'riddle-school': { title: 'Riddle School', icon: 'game_icons/riddle-school.png', url: 'play/riddle-school.html' },
+            'rio-rex': { title: 'Rio Rex', icon: 'game_icons/rio-rex.png', url: 'play/rio-rex.html' },
+            'rocket-pult': { title: 'Rocket Pult', icon: 'game_icons/rocket-pult.png', url: 'play/rocket-pult.html' },
+            'rocket-soccer-derby': { title: 'Rocket Soccer Derby', icon: 'game_icons/rocket-soccer-derby.png', url: 'play/rocket-soccer-derby.html' },
+            'rolling-sky': { title: 'Rolling Sky', icon: 'game_icons/rolling-sky.png', url: 'play/rolling-sky.html' },
+            'rolly-vortex': { title: 'Rolly Vortex', icon: 'game_icons/rolly-vortex.png', url: 'play/rolly-vortex.html' },
+            'roly-poly-monsters': { title: 'Roly Poly Monsters', icon: 'game_icons/roly-poly-monsters.png', url: 'play/roly-poly-monsters.html' },
+            'rooftop-snipers-2': { title: 'Rooftop Snipers 2', icon: 'game_icons/rooftop-snipers-2.png', url: 'play/rooftop-snipers-2.html' },
+            'rooftop-snipers': { title: 'Rooftop Snipers', icon: 'game_icons/rooftop-snipers.png', url: 'play/rooftop-snipers.html' },
+            'rowdy-city-wrestling': { title: 'Rowdy City Wrestling', icon: 'game_icons/rowdy-city-wrestling.png', url: 'play/rowdy-city-wrestling.html' },
+            'rowdy-wrestling': { title: 'Rowdy Wrestling', icon: 'game_icons/rowdy-wrestling.png', url: 'play/rowdy-wrestling.html' },
+            'run-3-editor': { title: 'Run 3 Editor', icon: 'game_icons/run-3-editor.png', url: 'play/run-3-editor.html' },
+            'running-fred': { title: 'Running Fred', icon: 'game_icons/running-fred.png', url: 'play/running-fred.html' },
+            'rusher-crusher': { title: 'Rusher Crusher', icon: 'game_icons/rusher-crusher.png', url: 'play/rusher-crusher.html' },
+            'sausage-flip': { title: 'Sausage Flip', icon: 'game_icons/sausage-flip.png', url: 'play/sausage-flip.html' },
+            'school-bus-demolition-derby': { title: 'School Bus Demolition Derby', icon: 'game_icons/school-bus-demolition-derby.png', url: 'play/school-bus-demolition-derby.html' },
+            'scrap-metal': { title: 'Scrap Metal', icon: 'game_icons/scrap-metal.png', url: 'play/scrap-metal.html' },
+            'shoot-stickman': { title: 'Shoot Stickman', icon: 'game_icons/shoot-stickman.png', url: 'play/shoot-stickman.html' },
+            'short-life': { title: 'Short Life', icon: 'game_icons/short-life.png', url: 'play/short-life.html' },
+            'short-ride': { title: 'Short Ride', icon: 'game_icons/short-ride.png', url: 'play/short-ride.html' },
+            'shortcut-race': { title: 'Shortcut Race', icon: 'game_icons/shortcut-race.png', url: 'play/shortcut-race.html' },
+            'sketchbook-04': { title: 'Sketchbook 04', icon: 'game_icons/sketchbook-04.png', url: 'play/sketchbook-04.html' },
+            'skiing-fred': { title: 'Skiing Fred', icon: 'game_icons/skiing-fred.png', url: 'play/skiing-fred.html' },
+            'slime-road': { title: 'Slime Road', icon: 'game_icons/slime-road.png', url: 'play/slime-road.html' },
+            'slope-2-multiplayer': { title: 'Slope 2 Multiplayer', icon: 'game_icons/slope-2-multiplayer.png', url: 'play/slope-2-multiplayer.html' },
+            'slope-2': { title: 'Slope 2', icon: 'game_icons/slope-2.png', url: 'play/slope-2.html' },
+            'slope-3': { title: 'Slope 3', icon: 'game_icons/slope-3.png', url: 'play/slope-3.html' },
+            'slope-city': { title: 'Slope City', icon: 'game_icons/slope-city.png', url: 'play/slope-city.html' },
+            'slope-tunnel': { title: 'Slope Tunnel', icon: 'game_icons/slope-tunnel.png', url: 'play/slope-tunnel.html' },
+            'slope': { title: 'Slope', icon: 'game_icons/slope.png', url: 'play/slope.html' },
+            'smash-karts': { title: 'Smash Karts', icon: 'game_icons/smash-karts.png', url: 'play/smash-karts.html' },
+            'sniper-gun-shooting': { title: 'Sniper Gun Shooting', icon: 'game_icons/sniper-gun-shooting.png', url: 'play/sniper-gun-shooting.html' },
+            'snow-rider-3d': { title: 'Snow Rider 3D', icon: 'game_icons/snow-rider-3d.png', url: 'play/snow-rider-3d.html' },
+            'soccar': { title: 'Soccar', icon: 'game_icons/soccar.png', url: 'play/soccar.html' },
+            'soccer-random': { title: 'Soccer Random', icon: 'game_icons/soccer-random.png', url: 'play/soccer-random.html' },
+            'soccer-skills-champions-league': { title: 'Soccer Skills Champions League', icon: 'game_icons/soccer-skills-champions-league.png', url: 'play/soccer-skills-champions-league.html' },
+            'soccer-skills-euro-cup': { title: 'Soccer Skills Euro Cup', icon: 'game_icons/soccer-skills-euro-cup.png', url: 'play/soccer-skills-euro-cup.html' },
+            'soccer-skills-world-cup': { title: 'Soccer Skills World Cup', icon: 'game_icons/soccer-skills-world-cup.png', url: 'play/soccer-skills-world-cup.html' },
+            'solitaire': { title: 'Solitaire', icon: 'game_icons/solitaire.png', url: 'play/solitaire.html' },
+            'speed-boat-extreme-racing': { title: 'Speed Boat Extreme Racing', icon: 'game_icons/speed-boat-extreme-racing.png', url: 'play/speed-boat-extreme-racing.html' },
+            'squish-run': { title: 'Squish Run', icon: 'game_icons/squish-run.png', url: 'play/squish-run.html' },
+            'stack-ball': { title: 'Stack Ball', icon: 'game_icons/stack-ball.png', url: 'play/stack-ball.html' },
+            'stack-bump-3d': { title: 'Stack Bump 3D', icon: 'game_icons/stack-bump-3d.png', url: 'play/stack-bump-3d.html' },
+            'stack': { title: 'Stack', icon: 'game_icons/stack.png', url: 'play/stack.html' },
+            'stacktris': { title: 'Stacktris', icon: 'game_icons/stacktris.png', url: 'play/stacktris.html' },
+            'stair-race-3d': { title: 'Stair Race 3d', icon: 'game_icons/stair-race-3d.png', url: 'play/stair-race-3d.html' },
+            'stealing-the-diamond': { title: 'Stealing The Diamond', icon: 'game_icons/stealing-the-diamond.png', url: 'play/stealing-the-diamond.html' },
+            'stick-defenders': { title: 'Stick Defenders', icon: 'game_icons/stick-defenders.png', url: 'play/stick-defenders.html' },
+            'stick-fighter': { title: 'Stick Fighter', icon: 'game_icons/stick-fighter.png', url: 'play/stick-fighter.html' },
+            'stick-merge': { title: 'Stick Merge', icon: 'game_icons/stick-merge.png', url: 'play/stick-merge.html' },
+            'stickman-army-team-battle': { title: 'Stickman Army Team Battle', icon: 'game_icons/stickman-army-team-battle.png', url: 'play/stickman-army-team-battle.html' },
+            'stickman-army-the-resistance': { title: 'Stickman Army The Resistance', icon: 'game_icons/stickman-army-the-resistance.png', url: 'play/stickman-army-the-resistance.html' },
+            'stickman-bike-pr': { title: 'Stickman Bike Pr', icon: 'game_icons/stickman-bike-pr.png', url: 'play/stickman-bike-pr.html' },
+            'stickman-bike': { title: 'Stickman Bike', icon: 'game_icons/stickman-bike.png', url: 'play/stickman-bike.html' },
+            'stickman-boxing-ko-champion': { title: 'Stickman Boxing KO Champion', icon: 'game_icons/stickman-boxing-ko-champion.png', url: 'play/stickman-boxing-ko-champion.html' },
+            'stickman-bridge-constructor': { title: 'Stickman Bridge Constructor', icon: 'game_icons/stickman-bridge-constructor.png', url: 'play/stickman-bridge-constructor.html' },
+            'stickman-climb-2': { title: 'Stickman Climb 2', icon: 'game_icons/stickman-climb-2.png', url: 'play/stickman-climb-2.html' },
+            'stickman-fighter-epic-battle-2': { title: 'Stickman Fighter Epic Battle 2', icon: 'game_icons/stickman-fighter-epic-battle-2.png', url: 'play/stickman-fighter-epic-battle-2.html' },
+            'stickman-fighter-mega-brawl': { title: 'Stickman Fighter Mega Brawl', icon: 'game_icons/stickman-fighter-mega-brawl.png', url: 'play/stickman-fighter-mega-brawl.html' },
+            'stickman-golf': { title: 'Stickman Golf', icon: 'game_icons/stickman-golf.png', url: 'play/stickman-golf.html' },
+            'stickman-hook': { title: 'Stickman Hook', icon: 'game_icons/stickman-hook.png', url: 'play/stickman-hook.html' },
+            'stickman-ragdoll-crash-fun': { title: 'Stickman Ragdoll Crash Fun', icon: 'game_icons/stickman-ragdoll-crash-fun.png', url: 'play/stickman-ragdoll-crash-fun.html' },
+            'stickman-school-run': { title: 'Stickman School Run', icon: 'game_icons/stickman-school-run.png', url: 'play/stickman-school-run.html' },
+            'stock-car-hero': { title: 'Stock Car Hero', icon: 'game_icons/stock-car-hero.png', url: 'play/stock-car-hero.html' },
+            'street-ball-jam': { title: 'Street Ball Jam', icon: 'game_icons/street-ball-jam.png', url: 'play/street-ball-jam.html' },
+            'striker-dummies': { title: 'Striker Dummies', icon: 'game_icons/striker-dummies.png', url: 'play/striker-dummies.html' },
+            'stunt-car-challenge-3': { title: 'Stunt Car Challenge 3', icon: 'game_icons/stunt-car-challenge-3.png', url: 'play/stunt-car-challenge-3.html' },
+            'stupid-zombies': { title: 'Stupid Zombies', icon: 'game_icons/stupid-zombies.png', url: 'play/stupid-zombies.html' },
+            'subway-runner': { title: 'Subway Runner', icon: 'game_icons/subway-runner.png', url: 'play/subway-runner.html' },
+            'subway-surfers-beijing': { title: 'Subway Surfers Beijing', icon: 'game_icons/subway-surfers-beijing.png', url: 'play/subway-surfers-beijing.html' },
+            'subway-surfers-houston': { title: 'Subway Surfers Houston', icon: 'game_icons/subway-surfers-houston.png', url: 'play/subway-surfers-houston.html' },
+            'subway-surfers-monaco': { title: 'Subway Surfers Monaco', icon: 'game_icons/subway-surfers-monaco.png', url: 'play/subway-surfers-monaco.html' },
+            'subway-surfers-newyork': { title: 'Subway Surfers Newyork', icon: 'game_icons/subway-surfers-newyork.png', url: 'play/subway-surfers-newyork.html' },
+            'subway-surfers': { title: 'Subway Surfers Sanfransisco', icon: 'game_icons/subway-surfers.png', url: 'play/subway-surfers.html' },
+            'super-bike-the-champion': { title: 'Super Bike The Champion', icon: 'game_icons/super-bike-the-champion.png', url: 'play/super-bike-the-champion.html' },
+            'super-hexbee-merger': { title: 'Super Hexbee Merger', icon: 'game_icons/super-hexbee-merger.png', url: 'play/super-hexbee-merger.html' },
+            'super-hot': { title: 'Super Hot', icon: 'game_icons/super-hot.png', url: 'play/super-hot.html' },
+            'super-liquid-soccer': { title: 'Super Liquid Soccer', icon: 'game_icons/super-liquid-soccer.png', url: 'play/super-liquid-soccer.html' },
+            'super-mario-64': { title: 'Super Mario 64', icon: 'game_icons/super-mario-64.png', url: 'play/super-mario-64.html' },
+            'super-mario-bros': { title: 'Super Mario Bros', icon: 'game_icons/super-mario-bros.png', url: 'play/super-mario-bros.html' },
+            'super-racing-gt-drag-pro': { title: 'Super Racing Gt Drag Pro', icon: 'game_icons/super-racing-gt-drag-pro.png', url: 'play/super-racing-gt-drag-pro.html' },
+            'super-santa-kicker': { title: 'Super Santa Kicker', icon: 'game_icons/super-santa-kicker.png', url: 'play/super-santa-kicker.html' },
+            'super-star-car': { title: 'Super Star Car', icon: 'game_icons/super-star-car.png', url: 'play/super-star-car.html' },
+            'super-tunnel-rush': { title: 'Super Tunnel Rush', icon: 'game_icons/super-tunnel-rush.png', url: 'play/super-tunnel-rush.html' },
+            'superbattle-2': { title: 'Superbattle 2', icon: 'game_icons/superbattle-2.png', url: 'play/superbattle-2.html' },
+            'superbike-hero': { title: 'Superbike Hero', icon: 'game_icons/superbike-hero.png', url: 'play/superbike-hero.html' },
+            'survivor-in-rainbow-monster': { title: 'Survivor In Rainbow Monster', icon: 'game_icons/survivor-in-rainbow-monster.png', url: 'play/survivor-in-rainbow-monster.html' },
+            'swatforce-vs-terrorists': { title: 'Swatforce vs Terrorists', icon: 'game_icons/swatforce-vs-terrorists.png', url: 'play/swatforce-vs-terrorists.html' },
+            'swingo': { title: 'Swingo', icon: 'game_icons/swingo.png', url: 'play/swingo.html' },
+            'tag': { title: 'Tag', icon: 'game_icons/tag.png', url: 'play/tag.html' },
+            'tank-trouble-2': { title: 'Tank Trouble 2', icon: 'game_icons/tank-trouble-2.png', url: 'play/tank-trouble-2.html' },
+            'tanuki-sunset': { title: 'Tanuki Sunset', icon: 'game_icons/tanuki-sunset.png', url: 'play/tanuki-sunset.html' },
+            'temple-of-boom': { title: 'Temple Of Boom', icon: 'game_icons/temple-of-boom.png', url: 'play/temple-of-boom.html' },
+            'temple-run-2': { title: 'Temple Run 2', icon: 'game_icons/temple-run-2.png', url: 'play/temple-run-2.html' },
+            'tennis-masters': { title: 'Tennis Masters', icon: 'game_icons/tennis-masters.png', url: 'play/tennis-masters.html' },
+            'terris': { title: 'Terris', icon: 'game_icons/terris.png', url: 'play/terris.html' },
+            'tetris-flash': { title: 'Tetris Flash', icon: 'game_icons/tetris-flash.png', url: 'play/tetris-flash.html' },
+            'the-impossible-quiz': { title: 'The Impossible Quiz', icon: 'game_icons/the-impossible-quiz.png', url: 'play/the-impossible-quiz.html' },
+            'the-little-giant': { title: 'The Little Giant', icon: 'game_icons/the-little-giant.png', url: 'play/the-little-giant.html' },
+            'the-spear-stickman': { title: 'The Spear Stickman', icon: 'game_icons/the-spear-stickman.png', url: 'play/the-spear-stickman.html' },
+            'there-is-no-game': { title: 'There Is No Game', icon: 'game_icons/there-is-no-game.png', url: 'play/there-is-no-game.html' },
+            'three-goblets': { title: 'Three Goblets', icon: 'game_icons/three-goblets.png', url: 'play/three-goblets.html' },
+            'thumb-fighter-christmas': { title: 'Thumb Fighter Christmas', icon: 'game_icons/thumb-fighter-christmas.png', url: 'play/thumb-fighter-christmas.html' },
+            'thumb-fighter': { title: 'Thumb Fighter', icon: 'game_icons/thumb-fighter.png', url: 'play/thumb-fighter.html' },
+            'tictactoe': { title: 'Tictactoe', icon: 'game_icons/tictactoe.png', url: 'play/tictactoe.html' },
+            'tiger-simulator-3d': { title: 'Tiger Simulator 3d', icon: 'game_icons/tiger-simulator-3d.png', url: 'play/tiger-simulator-3d.html' },
+            'tiny-fishing': { title: 'Tiny Fishing', icon: 'game_icons/tiny-fishing.png', url: 'play/tiny-fishing.html' },
+            'tinytownracing': { title: 'Tiny Town Racing', icon: 'game_icons/tinytownracing.png', url: 'play/tinytownracing.html' },
+            'tomb-of-the-mask-color': { title: 'Tomb of The Mask Color', icon: 'game_icons/tomb-of-the-mask-color.png', url: 'play/tomb-of-the-mask-color.html' },
+            'tomb-of-the-mask': { title: 'Tomb Of The Mask', icon: 'game_icons/tomb-of-the-mask.png', url: 'play/tomb-of-the-mask.html' },
+            'toon-off': { title: 'Toon Off', icon: 'game_icons/toon-off.png', url: 'play/toon-off.html' },
+            'top-speed-3d': { title: 'Top Speed 3d', icon: 'game_icons/top-speed-3d.png', url: 'play/top-speed-3d.html' },
+            'top-speed-racing-3d': { title: 'Top Speed Racing 3d', icon: 'game_icons/top-speed-racing-3d.png', url: 'play/top-speed-racing-3d.html' },
+            'tower-of-destiny': { title: 'Tower Of Destiny', icon: 'game_icons/tower-of-destiny.png', url: 'play/tower-of-destiny.html' },
+            'traffic-mania': { title: 'Traffic Mania', icon: 'game_icons/traffic-mania.png', url: 'play/traffic-mania.html' },
+            'traffic-rider': { title: 'Traffic Rider', icon: 'game_icons/traffic-rider.png', url: 'play/traffic-rider.html' },
+            'tricks': { title: 'Tricks', icon: 'game_icons/tricks.png', url: 'play/tricks.html' },
+            'truck-traffic': { title: 'Truck Traffic', icon: 'game_icons/truck-traffic.png', url: 'play/truck-traffic.html' },
+            'tube-jumpers': { title: 'Tube Jumpers', icon: 'game_icons/tube-jumpers.png', url: 'play/tube-jumpers.html' },
+            'tunnel-rush': { title: 'Tunnel Rush', icon: 'game_icons/tunnel-rush.png', url: 'play/tunnel-rush.html' },
+            'turbo-moto-racer': { title: 'Turbo Moto Racer', icon: 'game_icons/turbo-moto-racer.png', url: 'play/turbo-moto-racer.html' },
+            'two-ball-3d-dark': { title: 'Two Ball 3d Dark', icon: 'game_icons/two-ball-3d-dark.png', url: 'play/two-ball-3d-dark.html' },
+            'two-neon-boxes': { title: 'Two Neon Boxes', icon: 'game_icons/two-neon-boxes.png', url: 'play/two-neon-boxes.html' },
+            'ultimate-car-driving': { title: 'Ultimate Car Driving', icon: 'game_icons/ultimate-car-driving.png', url: 'play/ultimate-car-driving.html' },
+            'unicycle-hero': { title: 'Unicycle Hero', icon: 'game_icons/unicycle-hero.png', url: 'play/unicycle-hero.html' },
+            'vex-4': { title: 'Vex 4', icon: 'game_icons/vex-4.png', url: 'play/vex-4.html' },
+            'vex-5': { title: 'Vex 5', icon: 'game_icons/vex-5.png', url: 'play/vex-5.html' },
+            'vex-6': { title: 'Vex 6', icon: 'game_icons/vex-6.png', url: 'play/vex-6.html' },
+            'vex-7': { title: 'Vex 7', icon: 'game_icons/vex-7.png', url: 'play/vex-7.html' },
+            'volley-random': { title: 'Volley Random', icon: 'game_icons/volley-random.png', url: 'play/volley-random.html' },
+            'volleyball-challenge': { title: 'Volleyball Challenge', icon: 'game_icons/volleyball-challenge.png', url: 'play/volleyball-challenge.html' },
+            'water-color-sort': { title: 'Water Color Sort', icon: 'game_icons/water-color-sort.png', url: 'play/water-color-sort.html' },
+            'we-become-what-we-behold': { title: 'We Become What We Behold', icon: 'game_icons/we-become-what-we-behold.png', url: 'play/we-become-what-we-behold.html' },
+            'where-is-my-cat': { title: 'Where Is My Cat', icon: 'game_icons/where-is-my-cat.png', url: 'play/where-is-my-cat.html' },
+            'who-is': { title: 'Who Is', icon: 'game_icons/who-is.png', url: 'play/who-is.html' },
+            'wizard-mike': { title: 'Wizard Mike', icon: 'game_icons/wizard-mike.png', url: 'play/wizard-mike.html' },
+            'wood-blocks-3d': { title: 'Wood Blocks 3D', icon: 'game_icons/wood-blocks-3d.png', url: 'play/wood-blocks-3d.html' },
+            'word-city-crossed': { title: 'Word City Crossed', icon: 'game_icons/word-city-crossed.png', url: 'play/word-city-crossed.html' },
+            'word-city-uncrossed': { title: 'Word City Uncrossed', icon: 'game_icons/word-city-uncrossed.png', url: 'play/word-city-uncrossed.html' },
+            'wordle-unlimited': { title: 'Wordle Unlimited', icon: 'game_icons/wordle-unlimited.png', url: 'play/wordle-unlimited.html' },
+            'words-search-classic-edition': { title: 'Words Search Classic Edition', icon: 'game_icons/words-search-classic-edition.png', url: 'play/words-search-classic-edition.html' },
+            'worlds-hardest-game-2': { title: 'Worlds Hardest Game 2', icon: 'game_icons/worlds-hardest-game-2.png', url: 'play/worlds-hardest-game-2.html' },
+            'worlds-hardest-game-3': { title: 'Worlds Hardest Game 3', icon: 'game_icons/worlds-hardest-game-3.png', url: 'play/worlds-hardest-game-3.html' },
+            'wrassling': { title: 'Wrassling', icon: 'game_icons/wrassling.png', url: 'play/wrassling.html' },
+            'zombie-derby-pixel-survival': { title: 'Zombie Derby Pixel Survival', icon: 'game_icons/zombie-derby-pixel-survival.png', url: 'play/zombie-derby-pixel-survival.html' }
+        };
+
+        function loadFavoritesPage() {
+            const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            const favoritesGrid = document.getElementById('favorites-grid');
+            const emptyState = document.getElementById('empty-favorites');
+            const clearButton = document.getElementById('clear-favorites');
+            
+            console.log('loadFavoritesPage called, favorites:', favorites);
+            console.log('favoritesGrid element:', favoritesGrid);
+            console.log('emptyState element:', emptyState);
+            
+            if (favorites.length === 0) {
+                console.log('No favorites found, showing empty state');
+                emptyState.style.display = 'block';
+                favoritesGrid.style.display = 'none';
+                clearButton.style.display = 'none';
+            } else {
+                console.log('Found', favorites.length, 'favorites, showing grid');
+                emptyState.style.display = 'none';
+                favoritesGrid.style.display = 'grid';
+                clearButton.style.display = 'block';
+                
+                // Clear existing content
+                favoritesGrid.innerHTML = '';
+                
+                // Add favorite games
+                favorites.forEach(gameId => {
+                    console.log('Creating card for game:', gameId);
+                    const gameCard = createFavoriteGameCard(gameId);
+                    if (gameCard) {
+                        favoritesGrid.appendChild(gameCard);
+                        console.log('Added card for:', gameId);
+                    } else {
+                        console.log('Failed to create card for:', gameId);
+                    }
+                });
+            }
+        }
+
+        function createFavoriteGameCard(gameId) {
+            console.log('createFavoriteGameCard called for:', gameId);
+            const game = gameData[gameId];
+            console.log('Game data found:', game);
+            
+            if (!game) {
+                console.log('No game data found for:', gameId);
+                return null;
+            }
+            
+            const card = document.createElement('div');
+            card.className = 'game-card';
+            card.onclick = () => window.location.href = game.url;
+            
+            card.innerHTML = `
+                <div class="game-card-image">
+                    <img src="${game.icon}" alt="${game.title} Game" loading="lazy">
+                </div>
+                <div class="game-card-content">
+                    <h3 class="game-card-title">${game.title}</h3>
+                </div>
+            `;
+            
+            console.log('Created card for:', game.title);
+            return card;
+        }
+
+        function clearAllFavorites() {
+            if (confirm('Are you sure you want to clear all your favorite games?')) {
+                localStorage.removeItem('favorites');
+                loadFavoritesPage();
+                showNotification('All favorites cleared', 'success');
+            }
+        }
+
+        function exportFavorites() {
+            const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            if (favorites.length === 0) {
+                showNotification('No favorites to export', 'warning');
+                return;
+            }
+            
+            const favoritesList = favorites.map(gameId => {
+                const game = gameData[gameId];
+                return game ? game.title : gameId;
+            }).join('\n');
+            
+            const blob = new Blob([favoritesList], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'my-favorite-games.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            showNotification('Favorites exported successfully', 'success');
+        }
+    </script>
+</body>
+</html>

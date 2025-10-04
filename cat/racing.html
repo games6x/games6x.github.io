@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../fav.png">
+    <link rel="shortcut icon" type="image/png" href="../fav.png">
+    <link rel="apple-touch-icon" href="../fav.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblocked Games - Play Free Online Games</title>
+    <meta name="description" content="Play the best unblocked games online right in your browser. Choose from our quality unblocked games and have fun playing the best game titles. Fast Easy Unblocked - unblockedgames.com">
+    <meta name="keywords" content="racing games, unblocked racing games, free racing games, online racing games, car games, bike games, school games, work games">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unblockedgames.com">
+    <meta property="og:title" content="Unblocked Games - Play Free Online Games">
+    <meta property="og:description" content="Play the best unblocked games online right in your browser. Choose from our quality unblocked games and have fun playing the best game titles. Fast Easy Unblocked - unblockedgames.com">
+    <meta property="og:image" content="https://unblockedgames.com/game_icons/icon_game.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://unblockedgames.com">
+    <meta property="twitter:title" content="Unblocked Games - Play Free Online Games">
+    <meta property="twitter:description" content="Play the best unblocked games online right in your browser. Choose from our quality unblocked games and have fun playing the best game titles. Fast Easy Unblocked - unblockedgames.com">
+    <meta property="twitter:image" content="https://unblockedgames.com/game_icons/icon_game.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Racing Games - Unblocked Games",
+        "description": "Play the best racing games unblocked at school and work. Free online racing games including car racing, bike racing, and more.",
+        "url": "https://unblockedgames.com",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Racing Games Collection",
+            "description": "Collection of free unblocked racing games",
+            "numberOfItems": "30+",
+            "itemListElement": [
+                {
+                    "@type": "Game",
+                    "name": "Drift Boss",
+                    "description": "Car drifting racing game",
+                    "url": "https://unblockedgames.com"
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-custom">
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <!-- Sidebar Toggle Button -->
+                <button class="sidebar-toggle" id="sidebarToggle" type="button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                
+                <a class="navbar-brand" href="../index.html">Unblocked Games</a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../categories.html">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../favorites.html">Favorites</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Search Bar -->
+                    <div class="search-container position-relative">
+                        <input type="text" class="search-input" placeholder="Search games..." id="searchInput">
+                        <button class="search-btn" type="button" id="searchBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                        <!-- Search Results Dropdown -->
+                        <div class="search-results" id="searchResults">
+                            <!-- Results will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Theme Toggle Button -->
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode" onclick="toggleTheme()">
+                        <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-menu-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+            <h3>Categories</h3>
+        </div>
+        <div class="sidebar-content">
+            <ul class="sidebar-menu">
+                <li class="sidebar-item">
+                    <a href="new.html" class="sidebar-link">
+                        <img src="../icon/imgi_5_New.webp" alt="New" class="sidebar-icon">
+                        <span>New Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="trending.html" class="sidebar-link">
+                        <img src="../icon/imgi_6_Trending.webp" alt="Trending" class="sidebar-icon">
+                        <span>Trending Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="updated.html" class="sidebar-link">
+                        <img src="../icon/imgi_7_Updated.webp" alt="Updated" class="sidebar-icon">
+                        <span>Updated Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="action.html" class="sidebar-link">
+                        <img src="../icon/imgi_11_Action.webp" alt="Action" class="sidebar-icon">
+                        <span>Action Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="adventure.html" class="sidebar-link">
+                        <img src="../icon/imgi_12_Adventure.webp" alt="Adventure" class="sidebar-icon">
+                        <span>Adventure Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="basketball.html" class="sidebar-link">
+                        <img src="../icon/imgi_13_Basketball.webp" alt="Basketball" class="sidebar-icon">
+                        <span>Basketball Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="bike.html" class="sidebar-link">
+                        <img src="../icon/imgi_14_Bike.webp" alt="Bike" class="sidebar-icon">
+                        <span>Bike Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="card.html" class="sidebar-link">
+                        <img src="../icon/imgi_16_Card.webp" alt="Card" class="sidebar-icon">
+                        <span>Card Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="casual.html" class="sidebar-link">
+                        <img src="../icon/imgi_17_Casual.webp" alt="Casual" class="sidebar-icon">
+                        <span>Casual Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="clicker.html" class="sidebar-link">
+                        <img src="../icon/imgi_18_Clicker.webp" alt="Clicker" class="sidebar-icon">
+                        <span>Clicker Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="controller.html" class="sidebar-link">
+                        <img src="../icon/imgi_19_Controller.webp" alt="Controller" class="sidebar-icon">
+                        <span>Controller Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="driving.html" class="sidebar-link">
+                        <img src="../icon/imgi_20_Driving.webp" alt="Driving" class="sidebar-icon">
+                        <span>Driving Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="escape.html" class="sidebar-link">
+                        <img src="../icon/imgi_21_Escape.webp" alt="Escape" class="sidebar-icon">
+                        <span>Escape Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="flash.html" class="sidebar-link">
+                        <img src="../icon/imgi_22_Flash.webp" alt="Flash" class="sidebar-icon">
+                        <span>Flash Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="fps.html" class="sidebar-link">
+                        <img src="../icon/imgi_23_FPS.webp" alt="FPS" class="sidebar-icon">
+                        <span>FPS Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="horror.html" class="sidebar-link">
+                        <img src="../icon/imgi_24_Horror.webp" alt="Horror" class="sidebar-icon">
+                        <span>Horror Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="io.html" class="sidebar-link">
+                        <img src="../icon/imgi_25_io.webp" alt="IO" class="sidebar-icon">
+                        <span>IO Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="minecraft.html" class="sidebar-link">
+                        <img src="../icon/imgi_27_Minecraft.webp" alt="Minecraft" class="sidebar-icon">
+                        <span>Minecraft Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="multiplayer.html" class="sidebar-link">
+                        <img src="../icon/imgi_9_Multiplayer.webp" alt="Multiplayer" class="sidebar-icon">
+                        <span>Multiplayer Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pool.html" class="sidebar-link">
+                        <img src="../icon/imgi_28_Pool.webp" alt="Pool" class="sidebar-icon">
+                        <span>Pool Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="puzzle.html" class="sidebar-link">
+                        <img src="../icon/imgi_29_Puzzle.webp" alt="Puzzle" class="sidebar-icon">
+                        <span>Puzzle Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="racing.html" class="sidebar-link active">
+                        <img src="../icon/imgi_15_Car.webp" alt="Racing" class="sidebar-icon">
+                        <span>Racing Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="shooting.html" class="sidebar-link">
+                        <img src="../icon/imgi_30_Shooting.webp" alt="Shooting" class="sidebar-icon">
+                        <span>Shooting Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="simulation.html" class="sidebar-link">
+                        <img src="../icon/imgi_31_Soccer.webp" alt="Simulation" class="sidebar-icon">
+                        <span>Simulation Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="soccer.html" class="sidebar-link">
+                        <img src="../icon/imgi_31_Soccer.webp" alt="Soccer" class="sidebar-icon">
+                        <span>Soccer Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="space.html" class="sidebar-link">
+                        <img src="../icon/imgi_32_Sports.webp" alt="Space" class="sidebar-icon">
+                        <span>Space Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="sports.html" class="sidebar-link">
+                        <img src="../icon/imgi_32_Sports.webp" alt="Sports" class="sidebar-icon">
+                        <span>Sports Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="stickman.html" class="sidebar-link">
+                        <img src="../icon/imgi_33_Stickman.webp" alt="Stickman" class="sidebar-icon">
+                        <span>Stickman Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tower-defense.html" class="sidebar-link">
+                        <img src="../icon/imgi_35_TowerDefense.webp" alt="Tower Defense" class="sidebar-icon">
+                        <span>Tower Defense Games</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="2player.html" class="sidebar-link">
+                        <img src="../icon/imgi_10_2players.webp" alt="2 Player" class="sidebar-icon">
+                        <span>2 Player Games</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../categories.html">Categories</a></li>
+                <li class="breadcrumb-item active">Racing Games</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Sparkle Animation Background -->
+    <div class="sparkle-container">
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+    </div>
+
+    <section id="racing-games" class="py-4">
+        <div class="container">
+            <div class="games-container">
+                <div class="games-grid">
+                <!-- Drift Boss -->
+                <div class="game-card" data-game="drift-boss">
+                    <div class="game-card-image">
+                        <img src="../game_icons/drift-boss.png" alt="Drift Boss" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Drift Boss</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/drift-boss.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('drift-boss')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D Car Simulator -->
+                <div class="game-card" data-game="3d-car-simulator">
+                    <div class="game-card-image">
+                        <img src="../game_icons/3d-car-simulator.png" alt="3D Car Simulator" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">3D Car Simulator</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/3d-car-simulator.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('3d-car-simulator')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adventure Drivers -->
+                <div class="game-card" data-game="adventure-drivers">
+                    <div class="game-card-image">
+                        <img src="../game_icons/adventure-drivers.png" alt="Adventure Drivers" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Adventure Drivers</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/adventure-drivers.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('adventure-drivers')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D Moto Simulator 2 -->
+                <div class="game-card" data-game="3d-moto-simulator-2">
+                    <div class="game-card-image">
+                        <img src="../game_icons/3d-moto-simulator-2.png" alt="3D Moto Simulator 2" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">3D Moto Simulator 2</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/3d-moto-simulator-2.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('3d-moto-simulator-2')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4x4 Drive Offroad -->
+                <div class="game-card" data-game="4x4-drive-offroad">
+                    <div class="game-card-image">
+                        <img src="../game_icons/4x4-drive-offroad.png" alt="4x4 Drive Offroad" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">4x4 Drive Offroad</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/4x4-drive-offroad.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('4x4-drive-offroad')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bike Trials Offroad 1 -->
+                <div class="game-card" data-game="bike-trials-offroad-1">
+                    <div class="game-card-image">
+                        <img src="../game_icons/bike-trials-offroad-1.png" alt="Bike Trials Offroad 1" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Bike Trials Offroad 1</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/bike-trials-offroad-1.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('bike-trials-offroad-1')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bike Trials Winter 1 -->
+                <div class="game-card" data-game="bike-trials-winter-1">
+                    <div class="game-card-image">
+                        <img src="../game_icons/bike-trials-winter-1.png" alt="Bike Trials Winter 1" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Bike Trials Winter 1</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/bike-trials-winter-1.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('bike-trials-winter-1')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bike Trials Winter 2 -->
+                <div class="game-card" data-game="bike-trials-winter-2">
+                    <div class="game-card-image">
+                        <img src="../game_icons/bike-trials-winter-2.png" alt="Bike Trials Winter 2" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Bike Trials Winter 2</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/bike-trials-winter-2.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('bike-trials-winter-2')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blocky Cars -->
+                <div class="game-card" data-game="blocky-cars">
+                    <div class="game-card-image">
+                        <img src="../game_icons/blocky-cars.png" alt="Blocky Cars" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Blocky Cars</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/blocky-cars.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('blocky-cars')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blocky Trials -->
+                <div class="game-card" data-game="blocky-trials">
+                    <div class="game-card-image">
+                        <img src="../game_icons/blocky-trials.png" alt="Blocky Trials" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Blocky Trials</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/blocky-trials.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('blocky-trials')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smash Karts -->
+                <div class="game-card" data-game="smash-karts">
+                    <div class="game-card-image">
+                        <img src="../game_icons/smash-karts.png" alt="Smash Karts" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Smash Karts</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/smash-karts.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('smash-karts')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tunnel Rush -->
+                <div class="game-card" data-game="tunnel-rush">
+                    <div class="game-card-image">
+                        <img src="../game_icons/tunnel-rush.png" alt="Tunnel Rush" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Tunnel Rush</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/tunnel-rush.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('tunnel-rush')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slope -->
+                <div class="game-card" data-game="slope">
+                    <div class="game-card-image">
+                        <img src="../game_icons/slope.png" alt="Slope" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Slope</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/slope.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('slope')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slope 3 -->
+                <div class="game-card" data-game="slope-3">
+                    <div class="game-card-image">
+                        <img src="../game_icons/slope-3.png" alt="Slope 3" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Slope 3</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/slope-3.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('slope-3')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vex 6 -->
+                <div class="game-card" data-game="vex-6">
+                    <div class="game-card-image">
+                        <img src="../game_icons/vex-6.png" alt="Vex 6" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Vex 6</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/vex-6.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('vex-6')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vex 7 -->
+                <div class="game-card" data-game="vex-7">
+                    <div class="game-card-image">
+                        <img src="../game_icons/vex-7.png" alt="Vex 7" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Vex 7</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/vex-7.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('vex-7')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geometry Dash -->
+                <div class="game-card" data-game="geometry-dash">
+                    <div class="game-card-image">
+                        <img src="../game_icons/geometry-dash.png" alt="Geometry Dash" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Geometry Dash</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/geometry-dash.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('geometry-dash')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subway Surfers -->
+                <div class="game-card" data-game="subway-surfers">
+                    <div class="game-card-image">
+                        <img src="../game_icons/subway-surfers.png" alt="Subway Surfers" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Subway Surfers</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/subway-surfers.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('subway-surfers')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Temple Run 2 -->
+                <div class="game-card" data-game="temple-run-2">
+                    <div class="game-card-image">
+                        <img src="../game_icons/temple-run-2.png" alt="Temple Run 2" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Temple Run 2</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/temple-run-2.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('temple-run-2')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crossy Road -->
+                <div class="game-card" data-game="crossy-road">
+                    <div class="game-card-image">
+                        <img src="../game_icons/crossy-road.png" alt="Crossy Road" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Crossy Road</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/crossy-road.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('crossy-road')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Running Fred -->
+                <div class="game-card" data-game="running-fred">
+                    <div class="game-card-image">
+                        <img src="../game_icons/running-fred.png" alt="Running Fred" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Running Fred</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/running-fred.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('running-fred')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dreadhead Parkour -->
+                <div class="game-card" data-game="dreadhead-parkour">
+                    <div class="game-card-image">
+                        <img src="../game_icons/dreadhead-parkour.png" alt="Dreadhead Parkour" loading="lazy">
+                    </div>
+                    <div class="game-card-content">
+                        <h3 class="game-card-title">Dreadhead Parkour</h3>
+                        <div class="game-card-actions">
+                            <a href="../play/dreadhead-parkour.html" class="btn-custom btn-primary">Play Now</a>
+                            <button class="btn-custom btn-outline" onclick="toggleFavorite('dreadhead-parkour')">❤️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="py-4">
+        <div class="container">
+            <div class="games-container">
+                <div class="categories-description">
+                        <h2>Best Racing Games Unblocked - Play Free Online Racing Games</h2>
+                        <p>Discover the ultimate collection of <strong>racing games unblocked</strong> that you can play anywhere, anytime! Our carefully curated selection features the most thrilling car racing, bike racing, and high-speed games that work perfectly at school, work, or any location with internet access.</p>
+                        
+                        <h3>Popular Racing Game Types</h3>
+                        <p>Our collection features the most popular racing games including <a href="../play/burnout-drift.html" class="text-custom-primary">Burnout Drift</a>, <a href="../play/moto-x3m.html" class="text-custom-primary">Moto X3M</a>, and <a href="../play/slope.html" class="text-custom-primary">Slope</a>. Each game offers unique racing mechanics and adrenaline-pumping gameplay.</p>
+                        
+                        <h3>Racing Game Categories</h3>
+                        <ul>
+                            <li><strong>Car Racing:</strong> <a href="../play/burnout-drift.html" class="text-custom-primary">Burnout Drift</a>, <a href="../play/burnout-drift-hilltop.html" class="text-custom-primary">Burnout Drift Hilltop</a> - High-speed car action</li>
+                            <li><strong>Bike Racing:</strong> <a href="../play/moto-x3m.html" class="text-custom-primary">Moto X3M</a>, <a href="../play/moto-x3m-winter.html" class="text-custom-primary">Moto X3M Winter</a> - Motorcycle stunts and racing</li>
+                            <li><strong>Endless Runners:</strong> <a href="../play/slope.html" class="text-custom-primary">Slope</a>, <a href="../play/subway-surfers.html" class="text-custom-primary">Subway Surfers</a> - Non-stop racing action</li>
+                            <li><strong>Arcade Racing:</strong> <a href="../play/geometry-dash.html" class="text-custom-primary">Geometry Dash</a>, <a href="../play/temple-run-2.html" class="text-custom-primary">Temple Run 2</a> - Fast-paced arcade fun</li>
+                        </ul>
+                        
+                        <h3>Why Play Racing Games?</h3>
+                        <p>Racing games offer an exciting escape with high-speed thrills, challenging tracks, and competitive gameplay. Whether you're dodging obstacles in <a href="../play/crossy-road.html" class="text-custom-primary">Crossy Road</a> or performing stunts in <a href="../play/running-fred.html" class="text-custom-primary">Running Fred</a>, our racing games collection provides endless entertainment for players of all skill levels.</p>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Modern Footer with Shapes -->
+    <footer class="footer-modern">
+        <!-- Animated Wave Shape -->
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z" class="wave-path"></path>
+            </svg>
+        </div>
+        
+        <!-- Floating Geometric Shapes -->
+        <div class="footer-shapes">
+            <div class="footer-shape footer-shape-1"></div>
+            <div class="footer-shape footer-shape-2"></div>
+            <div class="footer-shape footer-shape-3"></div>
+            <div class="footer-shape footer-shape-4"></div>
+        </div>
+        
+        <div class="footer-content-wrapper">
+            <div class="container">
+                <!-- Main Footer Content -->
+                <div class="footer-grid">
+                    <div class="footer-col footer-brand">
+                        <div class="footer-logo">
+                            <span class="footer-logo-icon">🎮</span>
+                            <h3>Unblocked Games</h3>
+                        </div>
+                        <p class="footer-tagline">Your ultimate destination for free online games. Play anywhere, anytime!</p>
+                        <div class="footer-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">5000+</span>
+                                <span class="stat-label">Games</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Free</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5 class="footer-title">Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="../index.html">🏠 Home</a></li>
+                            <li><a href="../categories.html">📂 Categories</a></li>
+                            <li><a href="../favorites.html">❤️ Favorites</a></li>
+                            <li><a href="../index.html#top-games">🏆 Top Games</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5 class="footer-title">Popular Categories</h5>
+                        <ul class="footer-links">
+                            <li><a href="../cat/action.html">⚔️ Action Games</a></li>
+                            <li><a href="../cat/racing.html">🏎️ Racing Games</a></li>
+                            <li><a href="../cat/sports.html">⚽ Sports Games</a></li>
+                            <li><a href="../cat/puzzle.html">🧩 Puzzle Games</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h5 class="footer-title">Support</h5>
+                        <ul class="footer-links">
+                            <li><a href="../contact.html">📧 Contact Us</a></li>
+                            <li><a href="../privacy-policy.html">🔒 Privacy Policy</a></li>
+                            <li><a href="../terms-of-service.html">📜 Terms of Service</a></li>
+                            <li><a href="../help.html">💡 Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Footer Bottom -->
+                <div class="footer-bottom-modern">
+                    <div class="footer-copyright">
+                        <p>&copy; 2024 Unblocked Games. All rights reserved.</p>
+                    </div>
+                    <div class="footer-tagline-bottom">
+                        <p>Play free online games at school and work 🎮</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
