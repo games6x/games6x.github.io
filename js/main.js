@@ -1,9 +1,26 @@
 // Main JavaScript for Unblocked Games Website
 // Optimized for performance and SEO
 
+// Set CSS custom property for dynamic viewport height
+function setAppHeight() {
+    const doc = document.documentElement;
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+}
+
+// Prevent touch scrolling when in fullscreen
+function preventTouchMove(e) {
+    e.preventDefault();
+}
+
+// Update on resize and orientation change
+window.addEventListener('resize', setAppHeight);
+window.addEventListener('orientationchange', setAppHeight);
+setAppHeight(); // Set initial value
+
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
+    setAppHeight(); // Ensure it's set after DOM is loaded
 });
 
 // Performance optimization: Debounce function
@@ -515,9 +532,16 @@ function toggleFullscreen(gameId) {
     }
     
     function activateMobileFullscreen() {
+        // Update app height immediately
+        setAppHeight();
+        
         // Store the current scroll position
         const scrollY = window.scrollY;
         document.body.style.top = `-${scrollY}px`;
+        
+        // Set explicit height using window.innerHeight for more reliability
+        gameFrame.style.height = `${window.innerHeight}px`;
+        gameFrame.style.width = `${window.innerWidth}px`;
         
         // Add mobile fullscreen class to body
         document.body.classList.add('mobile-fullscreen-active');
@@ -535,6 +559,21 @@ function toggleFullscreen(gameId) {
         // Prevent scrolling on mobile
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
+        
+        // Prevent touch scrolling
+        document.addEventListener('touchmove', preventTouchMove, { passive: false });
+        
+        // Update height on orientation change while in fullscreen
+        const updateHeightHandler = () => {
+            setAppHeight();
+            gameFrame.style.height = `${window.innerHeight}px`;
+            gameFrame.style.width = `${window.innerWidth}px`;
+        };
+        window.addEventListener('resize', updateHeightHandler);
+        window.addEventListener('orientationchange', updateHeightHandler);
+        
+        // Store handler for removal later
+        gameFrame.dataset.updateHandler = 'active';
         
         // Add close button
         const closeBtn = document.createElement('button');
@@ -572,6 +611,16 @@ function toggleFullscreen(gameId) {
         // Remove mobile fullscreen classes
         document.body.classList.remove('mobile-fullscreen-active');
         gameFrame.classList.remove('mobile-fullscreen');
+        
+        // Remove touch scroll prevention
+        document.removeEventListener('touchmove', preventTouchMove, { passive: false });
+        
+        // Reset game frame dimensions
+        gameFrame.style.height = '';
+        gameFrame.style.width = '';
+        
+        // Clear update handler flag
+        delete gameFrame.dataset.updateHandler;
         
         // Restore scrolling
         document.body.style.overflow = '';
