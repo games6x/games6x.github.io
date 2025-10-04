@@ -900,8 +900,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
     <script>
+
+        // Set CSS custom property for dynamic viewport height
+        function setAppHeightLocal() {
+            const doc = document.documentElement;
+            doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+        }
+
+        // Prevent touch scrolling when in fullscreen
+        function preventTouchMoveLocal(e) {
+            e.preventDefault();
+        }
+
+        // Update on resize and orientation change
+        window.addEventListener('resize', setAppHeightLocal);
+        window.addEventListener('orientationchange', setAppHeightLocal);
+        setAppHeightLocal(); // Set initial value
+
         // Sidebar functionality
         document.addEventListener('DOMContentLoaded', function() {
+            setAppHeightLocal(); // Ensure it's set after DOM is loaded
             const sidebar = document.getElementById('sidebar');
             const sidebarOverlay = document.getElementById('sidebarOverlay');
             const sidebarMenuIcon = document.querySelector('.sidebar-menu-icon');
@@ -929,7 +947,6 @@
             sidebarLinks.forEach(link => {
                 link.addEventListener('click', closeSidebar);
             });
-        });
 
         // Game loading functionality
         document.getElementById('playGameBtn').addEventListener('click', function() {
@@ -946,23 +963,6 @@
             // Hide the play button overlay
             playOverlay.style.display = 'none';
         });
-
-        // Set CSS custom property for dynamic viewport height
-        function setAppHeightLocal() {
-            const doc = document.documentElement;
-            doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-        }
-
-        // Prevent touch scrolling when in fullscreen
-        function preventTouchMoveLocal(e) {
-            e.preventDefault();
-        }
-
-        // Update on resize and orientation change
-        window.addEventListener('resize', setAppHeightLocal);
-        window.addEventListener('orientationchange', setAppHeightLocal);
-        setAppHeightLocal(); // Set initial value
-
         // Enhanced fullscreen functionality with proper mobile support
         document.getElementById('fullscreenBtn').addEventListener('click', function() {
             const gameFrame = document.getElementById('gameFrame');
@@ -972,13 +972,20 @@
             const footer = document.querySelector('.footer-modern');
             const sparkleContainer = document.querySelector('.sparkle-container');
             
-            if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+            // Check if already in fullscreen
+            if (document.fullscreenElement || 
+                document.webkitFullscreenElement || 
+                document.mozFullScreenElement || 
+                document.msFullscreenElement) {
+                // Exit fullscreen
                 exitFullscreen();
             } else {
+                // Enter fullscreen
                 enterFullscreen();
             }
             
             function enterFullscreen() {
+                // Try native fullscreen API first
                 if (gameFrame.requestFullscreen) {
                     gameFrame.requestFullscreen().catch(err => {
                         console.log('Native fullscreen failed:', err);
@@ -1000,6 +1007,7 @@
                         activateMobileFullscreen();
                     });
                 } else {
+                    // No native fullscreen support, use mobile fallback
                     activateMobileFullscreen();
                 }
             }
@@ -1014,28 +1022,48 @@
                 } else if (document.msExitFullscreen) {
                     document.msExitFullscreen();
                 } else {
+                    // Exit mobile fullscreen mode
                     deactivateMobileFullscreen();
                 }
             }
             
             function activateMobileFullscreen() {
+                // Update app height immediately
                 setAppHeightLocal();
+                
+                // Store the current scroll position
                 const scrollY = window.scrollY;
                 document.body.style.top = `-${scrollY}px`;
+                
+                // Set explicit height using window.innerHeight for more reliability
                 gameFrame.style.height = `${window.innerHeight}px`;
                 gameFrame.style.width = `${window.innerWidth}px`;
+                
+                // Add mobile fullscreen class to body
                 document.body.classList.add('mobile-fullscreen-active');
+                
+                // Add mobile fullscreen class to game frame
                 gameFrame.classList.add('mobile-fullscreen');
+                
+                // Hide UI elements (but NOT game container elements)
                 if (header) header.style.display = 'none';
                 if (sidebar) sidebar.style.display = 'none';
                 if (breadcrumb) breadcrumb.style.display = 'none';
                 if (footer) footer.style.display = 'none';
                 if (sparkleContainer) sparkleContainer.style.display = 'none';
+                
+                // Hide game info bar specifically
                 const gameInfoBar = document.querySelector('.game-info-bar');
                 if (gameInfoBar) gameInfoBar.style.display = 'none';
+                
+                // Prevent scrolling on mobile
                 document.body.style.overflow = 'hidden';
                 document.documentElement.style.overflow = 'hidden';
+                
+                // Prevent touch scrolling
                 document.addEventListener('touchmove', preventTouchMoveLocal, { passive: false });
+                
+                // Update height on orientation change while in fullscreen
                 const updateHeightHandler = () => {
                     setAppHeightLocal();
                     gameFrame.style.height = `${window.innerHeight}px`;
@@ -1043,102 +1071,83 @@
                 };
                 window.addEventListener('resize', updateHeightHandler);
                 window.addEventListener('orientationchange', updateHeightHandler);
+                
+                // Store handler for removal later
                 gameFrame.dataset.updateHandler = 'active';
+                
+                // Add close button
                 const closeBtn = document.createElement('button');
                 closeBtn.innerHTML = '✕';
                 closeBtn.id = 'fullscreenCloseBtn';
+                
+                // Add hover effect
                 closeBtn.addEventListener('mouseenter', function() {
                     this.style.background = 'rgba(220, 38, 38, 0.9)';
                     this.style.transform = 'scale(1.1)';
                 });
+                
                 closeBtn.addEventListener('mouseleave', function() {
                     this.style.background = 'rgba(0,0,0,0.8)';
                     this.style.transform = 'scale(1)';
                 });
+                
                 closeBtn.addEventListener('click', function() {
                     deactivateMobileFullscreen();
                 });
+                
                 document.body.appendChild(closeBtn);
+                
+                // Update fullscreen button icon
                 const fullscreenBtn = document.getElementById('fullscreenBtn');
                 const fullscreenIcon = fullscreenBtn.querySelector('svg');
                 fullscreenIcon.innerHTML = '<path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>';
             }
             
             function deactivateMobileFullscreen() {
+                // Remove mobile fullscreen classes
                 document.body.classList.remove('mobile-fullscreen-active');
                 gameFrame.classList.remove('mobile-fullscreen');
+                
+                // Remove touch scroll prevention
                 document.removeEventListener('touchmove', preventTouchMoveLocal, { passive: false });
+                
+                // Reset game frame dimensions
                 gameFrame.style.height = '';
                 gameFrame.style.width = '';
+                
+                // Clear update handler flag
                 delete gameFrame.dataset.updateHandler;
+                
+                // Restore scrolling
                 document.body.style.overflow = '';
                 document.documentElement.style.overflow = '';
+                
+                // Restore scroll position
                 const scrollY = document.body.style.top;
                 document.body.style.top = '';
                 window.scrollTo(0, parseInt(scrollY || '0') * -1);
+                
+                // Show all UI elements
                 if (header) header.style.display = '';
                 if (sidebar) sidebar.style.display = '';
                 if (breadcrumb) breadcrumb.style.display = '';
                 if (footer) footer.style.display = '';
                 if (sparkleContainer) sparkleContainer.style.display = '';
+                
+                // Restore game info bar
                 const gameInfoBar = document.querySelector('.game-info-bar');
                 if (gameInfoBar) gameInfoBar.style.display = '';
+                
+                // Remove close button
                 const closeBtn = document.getElementById('fullscreenCloseBtn');
                 if (closeBtn) {
                     document.body.removeChild(closeBtn);
                 }
+                
+                // Update fullscreen button icon
                 const fullscreenBtn = document.getElementById('fullscreenBtn');
                 const fullscreenIcon = fullscreenBtn.querySelector('svg');
                 fullscreenIcon.innerHTML = '<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>';
-            }
-        });
-
-                } else if (gameFrame.webkitRequestFullscreen) {
-                    gameFrame.webkitRequestFullscreen();
-                } else if (gameFrame.mozRequestFullScreen) {
-                    gameFrame.mozRequestFullScreen();
-                } else if (gameFrame.msRequestFullscreen) {
-                    gameFrame.msRequestFullscreen();
-                } else {
-                    // Fallback for mobile browsers that don't support fullscreen
-                    gameFrame.style.position = 'fixed';
-                    gameFrame.style.top = '0';
-                    gameFrame.style.left = '0';
-                    gameFrame.style.width = '100vw';
-                    gameFrame.style.height = '100vh';
-                    gameFrame.style.zIndex = '9999';
-                    gameFrame.style.backgroundColor = 'black';
-                    
-                    // Add close button for fallback mode
-                    const closeBtn = document.createElement('button');
-                    closeBtn.innerHTML = '✕';
-                    closeBtn.style.position = 'fixed';
-                    closeBtn.style.top = '10px';
-                    closeBtn.style.right = '10px';
-                    closeBtn.style.zIndex = '10000';
-                    closeBtn.style.background = 'rgba(0,0,0,0.7)';
-                    closeBtn.style.color = 'white';
-                    closeBtn.style.border = 'none';
-                    closeBtn.style.borderRadius = '50%';
-                    closeBtn.style.width = '40px';
-                    closeBtn.style.height = '40px';
-                    closeBtn.style.fontSize = '20px';
-                    closeBtn.style.cursor = 'pointer';
-                    closeBtn.id = 'fullscreenCloseBtn';
-                    
-                    closeBtn.addEventListener('click', function() {
-                        gameFrame.style.position = 'absolute';
-                        gameFrame.style.top = '0';
-                        gameFrame.style.left = '0';
-                        gameFrame.style.width = '100%';
-                        gameFrame.style.height = '100%';
-                        gameFrame.style.zIndex = '1';
-                        gameFrame.style.backgroundColor = 'transparent';
-                        document.body.removeChild(closeBtn);
-                    });
-                    
-                    document.body.appendChild(closeBtn);
-                }
             }
         });
 
@@ -1154,6 +1163,41 @@
                 });
             } else {
                 // Fallback for browsers that don't support Web Share API
+                navigator.clipboard.writeText(window.location.href);
+                alert('Game link copied to clipboard!');
+            }
+        });
+
+        // Enhanced keyboard shortcuts for fullscreen
+        document.addEventListener('keydown', function(e) {
+            // Escape key to exit fullscreen
+            if (e.key === 'Escape') {
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                } else if (document.body.classList.contains('mobile-fullscreen-active')) {
+                    // Exit mobile fullscreen mode
+                    const closeBtn = document.getElementById('fullscreenCloseBtn');
+                    if (closeBtn) {
+                        closeBtn.click();
+                    }
+                }
+            }
+        });
+
+        // Like button functionality
+        document.getElementById('likeBtn').addEventListener('click', function() {
+            this.classList.toggle('liked');
+        });
+
+        // Share button functionality
+        document.getElementById('shareBtn').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Energy Unblocked Games',
+                    text: 'Play Energy!',
+                    url: window.location.href
+                });
+            } else {
                 navigator.clipboard.writeText(window.location.href);
                 alert('Game link copied to clipboard!');
             }
