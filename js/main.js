@@ -448,25 +448,160 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Game Frame Fullscreen Functionality
+// Enhanced Game Frame Fullscreen Functionality with Mobile Support
 function toggleFullscreen(gameId) {
     const gameFrame = document.getElementById(`game-frame-${gameId}`);
     if (!gameFrame) return;
     
-    if (!document.fullscreenElement) {
-        gameFrame.requestFullscreen().catch(err => {
-            console.log('Error attempting to enable fullscreen:', err);
-        });
+    const header = document.querySelector('.header-custom');
+    const sidebar = document.getElementById('sidebar');
+    const breadcrumb = document.querySelector('.breadcrumb-nav');
+    const footer = document.querySelector('.footer-modern');
+    const sparkleContainer = document.querySelector('.sparkle-container');
+    
+    // Check if already in fullscreen
+    if (document.fullscreenElement || 
+        document.webkitFullscreenElement || 
+        document.mozFullScreenElement || 
+        document.msFullscreenElement) {
+        // Exit fullscreen
+        exitFullscreen();
     } else {
-        document.exitFullscreen();
+        // Enter fullscreen
+        enterFullscreen();
+    }
+    
+    function enterFullscreen() {
+        // Try native fullscreen API first
+        if (gameFrame.requestFullscreen) {
+            gameFrame.requestFullscreen().catch(err => {
+                console.log('Native fullscreen failed:', err);
+                activateMobileFullscreen();
+            });
+        } else if (gameFrame.webkitRequestFullscreen) {
+            gameFrame.webkitRequestFullscreen().catch(err => {
+                console.log('Webkit fullscreen failed:', err);
+                activateMobileFullscreen();
+            });
+        } else if (gameFrame.mozRequestFullScreen) {
+            gameFrame.mozRequestFullScreen().catch(err => {
+                console.log('Moz fullscreen failed:', err);
+                activateMobileFullscreen();
+            });
+        } else if (gameFrame.msRequestFullscreen) {
+            gameFrame.msRequestFullscreen().catch(err => {
+                console.log('MS fullscreen failed:', err);
+                activateMobileFullscreen();
+            });
+        } else {
+            // No native fullscreen support, use mobile fallback
+            activateMobileFullscreen();
+        }
+    }
+    
+    function exitFullscreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        } else {
+            // Exit mobile fullscreen mode
+            deactivateMobileFullscreen();
+        }
+    }
+    
+    function activateMobileFullscreen() {
+        // Add mobile fullscreen class to body
+        document.body.classList.add('mobile-fullscreen-active');
+        
+        // Add mobile fullscreen class to game frame
+        gameFrame.classList.add('mobile-fullscreen');
+        
+        // Hide all UI elements using CSS classes
+        if (header) header.style.display = 'none';
+        if (sidebar) sidebar.style.display = 'none';
+        if (breadcrumb) breadcrumb.style.display = 'none';
+        if (footer) footer.style.display = 'none';
+        if (sparkleContainer) sparkleContainer.style.display = 'none';
+        
+        // Add close button
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '✕';
+        closeBtn.id = 'fullscreenCloseBtn';
+        
+        // Add hover effect
+        closeBtn.addEventListener('mouseenter', function() {
+            this.style.background = 'rgba(220, 38, 38, 0.9)';
+            this.style.transform = 'scale(1.1)';
+        });
+        
+        closeBtn.addEventListener('mouseleave', function() {
+            this.style.background = 'rgba(0,0,0,0.8)';
+            this.style.transform = 'scale(1)';
+        });
+        
+        closeBtn.addEventListener('click', function() {
+            deactivateMobileFullscreen();
+        });
+        
+        document.body.appendChild(closeBtn);
+        
+        // Update fullscreen button icon if it exists
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        if (fullscreenBtn) {
+            const fullscreenIcon = fullscreenBtn.querySelector('svg');
+            if (fullscreenIcon) {
+                fullscreenIcon.innerHTML = '<path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>';
+            }
+        }
+    }
+    
+    function deactivateMobileFullscreen() {
+        // Remove mobile fullscreen classes
+        document.body.classList.remove('mobile-fullscreen-active');
+        gameFrame.classList.remove('mobile-fullscreen');
+        
+        // Show all UI elements
+        if (header) header.style.display = '';
+        if (sidebar) sidebar.style.display = '';
+        if (breadcrumb) breadcrumb.style.display = '';
+        if (footer) footer.style.display = '';
+        if (sparkleContainer) sparkleContainer.style.display = '';
+        
+        // Remove close button
+        const closeBtn = document.getElementById('fullscreenCloseBtn');
+        if (closeBtn) {
+            document.body.removeChild(closeBtn);
+        }
+        
+        // Update fullscreen button icon if it exists
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        if (fullscreenBtn) {
+            const fullscreenIcon = fullscreenBtn.querySelector('svg');
+            if (fullscreenIcon) {
+                fullscreenIcon.innerHTML = '<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>';
+            }
+        }
     }
 }
 
 // Keyboard Shortcuts
 document.addEventListener('keydown', function(e) {
     // Escape key to exit fullscreen
-    if (e.key === 'Escape' && document.fullscreenElement) {
-        document.exitFullscreen();
+    if (e.key === 'Escape') {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else if (document.body.classList.contains('mobile-fullscreen-active')) {
+            // Exit mobile fullscreen mode
+            const closeBtn = document.getElementById('fullscreenCloseBtn');
+            if (closeBtn) {
+                closeBtn.click();
+            }
+        }
     }
     
     // Ctrl/Cmd + K to focus search
