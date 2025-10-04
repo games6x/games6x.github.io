@@ -549,12 +549,16 @@ function toggleFullscreen(gameId) {
         // Add mobile fullscreen class to game frame
         gameFrame.classList.add('mobile-fullscreen');
         
-        // Hide all UI elements using CSS classes
+        // Hide UI elements (but NOT game container elements)
         if (header) header.style.display = 'none';
         if (sidebar) sidebar.style.display = 'none';
         if (breadcrumb) breadcrumb.style.display = 'none';
         if (footer) footer.style.display = 'none';
         if (sparkleContainer) sparkleContainer.style.display = 'none';
+        
+        // Hide game info bar specifically
+        const gameInfoBar = document.querySelector('.game-info-bar');
+        if (gameInfoBar) gameInfoBar.style.display = 'none';
         
         // Prevent scrolling on mobile
         document.body.style.overflow = 'hidden';
@@ -637,6 +641,10 @@ function toggleFullscreen(gameId) {
         if (breadcrumb) breadcrumb.style.display = '';
         if (footer) footer.style.display = '';
         if (sparkleContainer) sparkleContainer.style.display = '';
+        
+        // Restore game info bar
+        const gameInfoBar = document.querySelector('.game-info-bar');
+        if (gameInfoBar) gameInfoBar.style.display = '';
         
         // Remove close button
         const closeBtn = document.getElementById('fullscreenCloseBtn');

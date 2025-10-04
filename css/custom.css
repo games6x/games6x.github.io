@@ -3378,7 +3378,9 @@ body {
    ======================================== */
 
 /* Mobile fullscreen mode */
-.mobile-fullscreen {
+.mobile-fullscreen,
+#gameFrame.mobile-fullscreen,
+iframe.mobile-fullscreen {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -3389,23 +3391,63 @@ body {
     height: 100vh !important; /* Fallback */
     height: -webkit-fill-available !important; /* iOS Safari */
     height: 100dvh !important; /* Modern browsers - dynamic viewport height */
-    max-width: 100% !important;
-    max-height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    min-width: 100vw !important;
+    min-height: 100vh !important;
     z-index: 9999 !important;
     background: black !important;
     border: none !important;
+    border-radius: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     object-fit: contain !important;
+    display: block !important;
+    transform: none !important;
 }
 
-/* Hide UI elements in mobile fullscreen */
+/* Hide UI elements in mobile fullscreen (but not game container) */
 .mobile-fullscreen-active .header-custom,
 .mobile-fullscreen-active .sidebar,
 .mobile-fullscreen-active .breadcrumb-nav,
 .mobile-fullscreen-active .footer-modern,
 .mobile-fullscreen-active .sparkle-container {
     display: none !important;
+}
+
+/* Hide game info bar but keep game frame visible */
+.mobile-fullscreen-active .game-info-bar {
+    display: none !important;
+}
+
+/* Make parent containers fullscreen to allow iframe to expand */
+.mobile-fullscreen-active .container,
+.mobile-fullscreen-active .game-container-merged {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: black !important;
+    z-index: 9997 !important;
+    overflow: visible !important;
+}
+
+/* Ensure game frame container doesn't restrict fullscreen */
+.mobile-fullscreen-active .game-frame-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9998 !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: black !important;
+    border-radius: 0 !important;
 }
 
 /* Prevent body scroll in mobile fullscreen */
