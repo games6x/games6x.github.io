@@ -515,6 +515,10 @@ function toggleFullscreen(gameId) {
     }
     
     function activateMobileFullscreen() {
+        // Store the current scroll position
+        const scrollY = window.scrollY;
+        document.body.style.top = `-${scrollY}px`;
+        
         // Add mobile fullscreen class to body
         document.body.classList.add('mobile-fullscreen-active');
         
@@ -527,6 +531,10 @@ function toggleFullscreen(gameId) {
         if (breadcrumb) breadcrumb.style.display = 'none';
         if (footer) footer.style.display = 'none';
         if (sparkleContainer) sparkleContainer.style.display = 'none';
+        
+        // Prevent scrolling on mobile
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
         
         // Add close button
         const closeBtn = document.createElement('button');
@@ -564,6 +572,15 @@ function toggleFullscreen(gameId) {
         // Remove mobile fullscreen classes
         document.body.classList.remove('mobile-fullscreen-active');
         gameFrame.classList.remove('mobile-fullscreen');
+        
+        // Restore scrolling
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+        
+        // Restore scroll position
+        const scrollY = document.body.style.top;
+        document.body.style.top = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
         
         // Show all UI elements
         if (header) header.style.display = '';
