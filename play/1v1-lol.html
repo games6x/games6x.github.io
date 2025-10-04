@@ -789,29 +789,152 @@
             gameFrame.classList.add('loaded');
             playOverlay.style.display = 'none';
         });
+        // Set CSS custom property for dynamic viewport height
+        function setAppHeightLocal() {
+            const doc = document.documentElement;
+            doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+        }
 
-        // Fullscreen functionality
+        // Prevent touch scrolling when in fullscreen
+        function preventTouchMoveLocal(e) {
+            e.preventDefault();
+        }
+
+        // Update on resize and orientation change
+        window.addEventListener('resize', setAppHeightLocal);
+        window.addEventListener('orientationchange', setAppHeightLocal);
+        setAppHeightLocal(); // Set initial value
+
+        // Enhanced fullscreen functionality with proper mobile support
         document.getElementById('fullscreenBtn').addEventListener('click', function() {
-            const gameFrameContainer = document.querySelector('.game-frame-container');
             const gameFrame = document.getElementById('gameFrame');
+            const header = document.querySelector('.header-custom');
+            const sidebar = document.getElementById('sidebar');
+            const breadcrumb = document.querySelector('.breadcrumb-nav');
+            const footer = document.querySelector('.footer-modern');
+            const sparkleContainer = document.querySelector('.sparkle-container');
             
             if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
-                if (document.exitFullscreen) document.exitFullscreen();
-                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-                else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
-                else if (document.msExitFullscreen) document.msExitFullscreen();
+                exitFullscreen();
             } else {
-                if (gameFrameContainer.requestFullscreen) {
-                    gameFrameContainer.requestFullscreen().catch(() => {
-                        // Fallback: make game frame larger
-                        gameFrame.style.position = 'fixed';
-                        gameFrame.style.top = '0';
-                        gameFrame.style.left = '0';
-                        gameFrame.style.width = '100vw';
-                        gameFrame.style.height = '100vh';
-                        gameFrame.style.zIndex = '9999';
-                        gameFrame.style.backgroundColor = 'black';
+                enterFullscreen();
+            }
+            
+            function enterFullscreen() {
+                if (gameFrame.requestFullscreen) {
+                    gameFrame.requestFullscreen().catch(err => {
+                        console.log('Native fullscreen failed:', err);
+                        activateMobileFullscreen();
                     });
+                } else if (gameFrame.webkitRequestFullscreen) {
+                    gameFrame.webkitRequestFullscreen().catch(err => {
+                        console.log('Webkit fullscreen failed:', err);
+                        activateMobileFullscreen();
+                    });
+                } else if (gameFrame.mozRequestFullScreen) {
+                    gameFrame.mozRequestFullScreen().catch(err => {
+                        console.log('Moz fullscreen failed:', err);
+                        activateMobileFullscreen();
+                    });
+                } else if (gameFrame.msRequestFullscreen) {
+                    gameFrame.msRequestFullscreen().catch(err => {
+                        console.log('MS fullscreen failed:', err);
+                        activateMobileFullscreen();
+                    });
+                } else {
+                    activateMobileFullscreen();
+                }
+            }
+            
+            function exitFullscreen() {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                } else {
+                    deactivateMobileFullscreen();
+                }
+            }
+            
+            function activateMobileFullscreen() {
+                setAppHeightLocal();
+                const scrollY = window.scrollY;
+                document.body.style.top = `-${scrollY}px`;
+                gameFrame.style.height = `${window.innerHeight}px`;
+                gameFrame.style.width = `${window.innerWidth}px`;
+                document.body.classList.add('mobile-fullscreen-active');
+                gameFrame.classList.add('mobile-fullscreen');
+                if (header) header.style.display = 'none';
+                if (sidebar) sidebar.style.display = 'none';
+                if (breadcrumb) breadcrumb.style.display = 'none';
+                if (footer) footer.style.display = 'none';
+                if (sparkleContainer) sparkleContainer.style.display = 'none';
+                const gameInfoBar = document.querySelector('.game-info-bar');
+                if (gameInfoBar) gameInfoBar.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
+                document.addEventListener('touchmove', preventTouchMoveLocal, { passive: false });
+                const updateHeightHandler = () => {
+                    setAppHeightLocal();
+                    gameFrame.style.height = `${window.innerHeight}px`;
+                    gameFrame.style.width = `${window.innerWidth}px`;
+                };
+                window.addEventListener('resize', updateHeightHandler);
+                window.addEventListener('orientationchange', updateHeightHandler);
+                gameFrame.dataset.updateHandler = 'active';
+                const closeBtn = document.createElement('button');
+                closeBtn.innerHTML = '✕';
+                closeBtn.id = 'fullscreenCloseBtn';
+                closeBtn.addEventListener('mouseenter', function() {
+                    this.style.background = 'rgba(220, 38, 38, 0.9)';
+                    this.style.transform = 'scale(1.1)';
+                });
+                closeBtn.addEventListener('mouseleave', function() {
+                    this.style.background = 'rgba(0,0,0,0.8)';
+                    this.style.transform = 'scale(1)';
+                });
+                closeBtn.addEventListener('click', function() {
+                    deactivateMobileFullscreen();
+                });
+                document.body.appendChild(closeBtn);
+                const fullscreenBtn = document.getElementById('fullscreenBtn');
+                const fullscreenIcon = fullscreenBtn.querySelector('svg');
+                fullscreenIcon.innerHTML = '<path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>';
+            }
+            
+            function deactivateMobileFullscreen() {
+                document.body.classList.remove('mobile-fullscreen-active');
+                gameFrame.classList.remove('mobile-fullscreen');
+                document.removeEventListener('touchmove', preventTouchMoveLocal, { passive: false });
+                gameFrame.style.height = '';
+                gameFrame.style.width = '';
+                delete gameFrame.dataset.updateHandler;
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+                const scrollY = document.body.style.top;
+                document.body.style.top = '';
+                window.scrollTo(0, parseInt(scrollY || '0') * -1);
+                if (header) header.style.display = '';
+                if (sidebar) sidebar.style.display = '';
+                if (breadcrumb) breadcrumb.style.display = '';
+                if (footer) footer.style.display = '';
+                if (sparkleContainer) sparkleContainer.style.display = '';
+                const gameInfoBar = document.querySelector('.game-info-bar');
+                if (gameInfoBar) gameInfoBar.style.display = '';
+                const closeBtn = document.getElementById('fullscreenCloseBtn');
+                if (closeBtn) {
+                    document.body.removeChild(closeBtn);
+                }
+                const fullscreenBtn = document.getElementById('fullscreenBtn');
+                const fullscreenIcon = fullscreenBtn.querySelector('svg');
+                fullscreenIcon.innerHTML = '<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>';
+            }
+        });
+
                 } else if (gameFrameContainer.webkitRequestFullscreen) gameFrameContainer.webkitRequestFullscreen();
                 else if (gameFrameContainer.mozRequestFullScreen) gameFrameContainer.mozRequestFullScreen();
                 else if (gameFrameContainer.msRequestFullscreen) gameFrameContainer.msRequestFullscreen();
